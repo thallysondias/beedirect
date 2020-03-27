@@ -4,7 +4,7 @@ ob_start();
   Plugin name: BeeDirect by Omnibees
   Plugin uri: widgets.omnibees.com/manual
   Description: Widgets to BeeDirect
-  Version: 0.0.7
+  Version: 0.0.8
   Author: Omnibees
   Author uri: www.omnibees.com
   License: GPlv2 or Later
