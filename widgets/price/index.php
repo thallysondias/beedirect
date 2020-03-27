@@ -103,7 +103,9 @@ class beePrice extends Widget_Base {
 ?>
 
   <div <?php echo $this->get_render_attribute_string('label_heading');?>>
-    <div class="omnibees-best-price"></div>
+    <div class="omnibees-best-price">
+      <img src="<?php echo plugin_dir_url( __FILE__ ) ?>/assets/img/search.gif">
+    </div>
   </div>
   <script>
   console.log("inicou script");
@@ -153,8 +155,11 @@ class beePrice extends Widget_Base {
             }
         });
     }
+
     jQuery(document).ready(function(){
-      start_price();
+      setTimeout(function(){
+        start_price();
+      },3000);
     });
     
   </script>
