@@ -159,7 +159,8 @@ class beePrice extends Widget_Base {
   </style>
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
   <script>
-    console.log("Best Price by Omnibees");
+    console.log("BestPrice by Omnibees");
+    $(". static-price").hide();
     var timestamp = new Date();
     var timestampiso = timestamp.toISOString();
     function start_price(){
@@ -186,7 +187,6 @@ class beePrice extends Widget_Base {
         ).then(function() {
             var bestPriceApi = "";
             if (obj["HotelStaysType"] !== null) {
-
               <?php
               $beeCurrency =  $settings['currency'];
               function getCurrencySymbol($beeCurrency){
@@ -199,10 +199,15 @@ class beePrice extends Widget_Base {
                 endswitch;
               }
               ?>
+              $(". static-price").hide();
+
               bestPrice = obj.HotelStaysType.HotelStays[0].Price.AmountBeforeTax;
               bestPriceApi += "<span class='best-price-since'><?php echo $settings['title'] ?> </span>"
               bestPriceApi += "<span class='best-price-value'><?php echo getCurrencySymbol($beeCurrency) ?> " + parseFloat(bestPrice.toFixed(2)) + "</span>";
               $('.omnibees-best-price').html(bestPriceApi);
+            }else {
+              console.log("O hotel não possui tarifa para hoje");
+              $(". static-price").show();
             }
         });
     }

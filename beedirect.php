@@ -4,7 +4,7 @@ ob_start();
   Plugin name: BeeDirect by Omnibees
   Plugin uri: widgets.omnibees.com/manual
   Description: Widgets to BeeDirect
-  Version: 0.0.5
+  Version: 0.0.6
   Author: Omnibees
   Author uri: www.omnibees.com
   License: GPlv2 or Later
@@ -36,7 +36,7 @@ function add_elementor_widget_categories( $elements_manager ) {
   $elements_manager->add_category(
     'Omnibees',
     [
-      'title' => __( 'Omnibees', 'plugin-name' ),
+      'title' => __( 'Omnibees', 'elementor' ),
       'icon' => 'fa fa-calendar',
     ]
   );
