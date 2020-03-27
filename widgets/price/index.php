@@ -28,6 +28,9 @@ class beePrice extends Widget_Base {
         'label' => __('Hotel ID','elementor'),
         'label_block' => true,
         'type' => Controls_Manager::NUMBER,
+        'dynamic' => [
+          'active' => true,
+        ],
         'title' => 'ID do Hotel Omnibees',
         'min' => 1,
         'placeholder' => __('Entender you title','elementor'),
@@ -40,6 +43,9 @@ class beePrice extends Widget_Base {
         'default' => 'A partir de',
         'label_block' => true,
         'type' => Controls_Manager::TEXT,
+        'dynamic' => [
+          'active' => true,
+        ],
         'placeholder' => __('A partir de','elementor'),
       ]
     );
@@ -48,6 +54,9 @@ class beePrice extends Widget_Base {
       [
         'label' => __('Moeda','elementor'),
         'type' => Controls_Manager::SELECT2,
+        'dynamic' => [
+          'active' => true,
+        ],
         'multiple' => false,
         'label_block' => true,
         'default' => [ '16', 'elementor' ],
@@ -66,7 +75,7 @@ class beePrice extends Widget_Base {
     $this->start_controls_section(
       'style_section',
       [
-        'label' => __( 'Style Section', 'plugin-name' ),
+        'label' => __( 'Style Section', 'elementor' ),
         'tab' => Controls_Manager::TAB_STYLE,
       ]
     );
@@ -90,6 +99,32 @@ class beePrice extends Widget_Base {
         ],
 			]
     );
+
+    $this->add_control(
+			'alignment',
+			[
+				'label' => __( 'Alignment', 'elementor' ),
+        'type' => Controls_Manager::CHOOSE,
+        'selectors' => [
+          '.beedirect__best-price .omnibees-best-price' => 'text-align: {{alignment}}'
+        ],
+				'options' => [
+					'left' => [
+						'title' => __( 'Left', 'elementor' ),
+						'icon' => 'fa fa-align-left',
+					],
+					'center' => [
+						'title' => __( 'Center', 'elementor' ),
+						'icon' => 'fa fa-align-center',
+					],
+					'right' => [
+						'title' => __( 'Right', 'elementor' ),
+						'icon' => 'fa fa-align-right',
+					],
+				],
+				'default' => 'center',
+			]
+		);
     
     $this->end_controls_section();
   }
@@ -101,15 +136,30 @@ class beePrice extends Widget_Base {
       'label_heading', ['class' =>['beedirect__best-price']]
     );
 ?>
-
   <div <?php echo $this->get_render_attribute_string('label_heading');?>>
     <div class="omnibees-best-price">
-      <img src="<?php echo plugin_dir_url( __FILE__ ) ?>/assets/img/search.gif">
+      <img src="<?php echo plugin_dir_url( __FILE__ ) ?>/assets/img/loading.svg" class="searching-price">
     </div>
   </div>
+  <style>
+  .searching-price {
+    animation-name: spin;
+    animation-duration: 3000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear; 
+  }
+  @keyframes spin {
+    from {
+      transform:rotate(0deg);
+    }
+    to {
+      transform:rotate(360deg);
+    }
+  }
+  </style>
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
   <script>
-  console.log("inicou script");
+    console.log("Best Price by Omnibees");
     var timestamp = new Date();
     var timestampiso = timestamp.toISOString();
     function start_price(){
@@ -150,7 +200,7 @@ class beePrice extends Widget_Base {
               }
               ?>
               bestPrice = obj.HotelStaysType.HotelStays[0].Price.AmountBeforeTax;
-              bestPriceApi += "<span class='best-price-since'><?php echo $settings['title'] ?></span>"
+              bestPriceApi += "<span class='best-price-since'><?php echo $settings['title'] ?> </span>"
               bestPriceApi += "<span class='best-price-value'><?php echo getCurrencySymbol($beeCurrency) ?> " + parseFloat(bestPrice.toFixed(2)) + "</span>";
               $('.omnibees-best-price').html(bestPriceApi);
             }
