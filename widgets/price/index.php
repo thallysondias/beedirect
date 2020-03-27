@@ -229,6 +229,7 @@ class beePrice extends Widget_Base {
               $('.omnibees-best-price').html(bestPriceApi);
             }else {
               console.log("O hotel não possui tarifa para hoje");
+              $(".beedirect__best-price").hide();
               $(".static-price").show();
             }
         });

@@ -6,7 +6,7 @@ Requires at least: 5.0.0
 Tested up to: 5.3.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Version: 0.0.4
+Version: 0.0.8
  
 
 == Description ==
@@ -46,7 +46,8 @@ BE Footer -> http://widgets.omnibees.com/wordpress/print-rodape.JPG
 Control Panel -> http://widgets.omnibees.com/wordpress/print-painel.JPG
 
 == Changelog ==
-= 0.0.6 =
+
+= 0.0.8 =
 * Oculta preços staticos do site
 = 0.0.5 =
 * Adicionar loading antes de exibir o preço
