@@ -107,6 +107,7 @@ class beePrice extends Widget_Base {
       <img src="<?php echo plugin_dir_url( __FILE__ ) ?>/assets/img/search.gif">
     </div>
   </div>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
   <script>
   console.log("inicou script");
     var timestamp = new Date();
