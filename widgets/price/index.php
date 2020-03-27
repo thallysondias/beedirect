@@ -225,7 +225,7 @@ class beePrice extends Widget_Base {
 
               bestPrice = obj.HotelStaysType.HotelStays[0].Price.AmountBeforeTax;
               bestPriceApi += "<span class='best-price-since'><?php echo $settings['title'] ?> </span>"
-              bestPriceApi += "<span class='best-price-value'><?php echo getCurrencySymbol($beeCurrency) ?> " + parseFloat(bestPrice.toFixed(2)) + "</span>";
+              bestPriceApi += "<span class='best-price-value'><?php echo getCurrencySymbol($beeCurrency) ?> " + parseFloat(Math.round(bestPrice * 100) / 100).toFixed(2) + "</span>";
               $('.omnibees-best-price').html(bestPriceApi);
             }else {
               console.log("O hotel não possui tarifa para hoje");
@@ -234,13 +234,11 @@ class beePrice extends Widget_Base {
             }
         });
     }
-
     jQuery(document).ready(function(){
       setTimeout(function(){
         start_price();
       },3000);
     });
-    
   </script>
 
 <?php
