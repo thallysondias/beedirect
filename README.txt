@@ -22,7 +22,7 @@ Possibilidade de adicionar valores dinamicos diretamente vindos da API do Omnibe
 == Installation ==
 PT
 Basta instalar o plugin e configurar o ID de reserva da Omnibees.
-O Motor de Reserva será inserido automaticamente no layout escolhido
+O Motor de Reserva serï¿½ inserido automaticamente no layout escolhido
 
 EN
 Just install the plugin and set up the Omnibees Booking ID.
@@ -31,8 +31,8 @@ The Booking Engine will be automatically inserted into the chosen layout
 == Frequently Asked Questions ==
 
 PT
-O que é necessário para utilizar o plugin?
-- É necessário apenas que tenha o ID de reserva gerado pela Omnibees. Este numero pode ser requisitado através do email: servicedesk@omnibees.com
+O que ï¿½ necessï¿½rio para utilizar o plugin?
+- ï¿½ necessï¿½rio apenas que tenha o ID de reserva gerado pela Omnibees. Este numero pode ser requisitado atravï¿½s do email: servicedesk@omnibees.com
 
 EN
 What do I need to use the plugin?
@@ -46,5 +46,7 @@ BE Footer -> http://widgets.omnibees.com/wordpress/print-rodape.JPG
 Control Panel -> http://widgets.omnibees.com/wordpress/print-painel.JPG
 
 == Changelog ==
+= 0.0.2 =
+* Adicionar loading antes de exibir o preÃ§o
 = 0.0.1 =
-* Possibilidade de Adicionar Preços Dinamicos
+* Possibilidade de Adicionar Preï¿½os Dinamicos
