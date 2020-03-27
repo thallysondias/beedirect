@@ -99,7 +99,29 @@ class beePrice extends Widget_Base {
         ],
 			]
     );
-
+    $this->add_control(
+			'text_color',
+			[
+				'label' => __( 'Texto', 'elementor' ),
+				'type' => Controls_Manager::COLOR,
+        'default' => '#000',
+        'selectors' => [
+          '.beedirect__best-price .best-price-since' => 'color: {{text_color}}'
+        ],
+			]
+    );
+    $this->add_control(
+      'priceColor',
+      [
+        'name' => 'priceColor',
+        'label' => __( 'Preço', 'elementor' ),
+        'type' => Controls_Manager::COLOR,
+        'default' => '#f7c410',
+        'selectors' => [
+          '.beedirect__best-price .best-price-value' => 'color: {{priceColor}}'
+        ],
+			]
+		);
     $this->add_control(
 			'alignment',
 			[
@@ -122,7 +144,7 @@ class beePrice extends Widget_Base {
 						'icon' => 'fa fa-align-right',
 					],
 				],
-				'default' => 'center',
+				'default' => 'right',
 			]
 		);
     
@@ -137,7 +159,7 @@ class beePrice extends Widget_Base {
     );
 ?>
   <div <?php echo $this->get_render_attribute_string('label_heading');?>>
-    <div class="omnibees-best-price">
+    <div class="omnibees-best-price" style="text-align:<?php echo $settings['alignment'] ?>">
       <img src="<?php echo plugin_dir_url( __FILE__ ) ?>/assets/img/loading.svg" class="searching-price">
     </div>
   </div>
@@ -160,7 +182,7 @@ class beePrice extends Widget_Base {
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
   <script>
     console.log("BestPrice by Omnibees");
-    $(". static-price").hide();
+    $(".static-price").hide();
     var timestamp = new Date();
     var timestampiso = timestamp.toISOString();
     function start_price(){
@@ -199,7 +221,7 @@ class beePrice extends Widget_Base {
                 endswitch;
               }
               ?>
-              $(". static-price").hide();
+              $(".static-price").hide();
 
               bestPrice = obj.HotelStaysType.HotelStays[0].Price.AmountBeforeTax;
               bestPriceApi += "<span class='best-price-since'><?php echo $settings['title'] ?> </span>"
@@ -207,7 +229,7 @@ class beePrice extends Widget_Base {
               $('.omnibees-best-price').html(bestPriceApi);
             }else {
               console.log("O hotel não possui tarifa para hoje");
-              $(". static-price").show();
+              $(".static-price").show();
             }
         });
     }
