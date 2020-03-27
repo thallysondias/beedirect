@@ -46,7 +46,7 @@ BE Footer -> http://widgets.omnibees.com/wordpress/print-rodape.JPG
 Control Panel -> http://widgets.omnibees.com/wordpress/print-painel.JPG
 
 == Changelog ==
-= 0.0.4 =
+= 0.0.5 =
 * Adicionar loading antes de exibir o preço
 * Adiciona Dynamic values
 = 0.0.1 =
