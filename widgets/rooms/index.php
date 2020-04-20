@@ -27,7 +27,10 @@ class beeRooms extends Widget_Base {
       [
         'label' => __('Hotel ID','elementor'),
         'label_block' => true,
-        'type' => Controls_Manager::NUMBER,
+        'type' => Controls_Manager::TEXT,
+        'dynamic' => [
+          'active' => true,
+        ],
         'title' => 'ID do Hotel Omnibees',
         'min' => 1,
         'placeholder' => __('Entender you title','elementor'),
