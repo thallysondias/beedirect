@@ -47,10 +47,13 @@ require_once('elementor/init.php');
 
 
 function beedirect_init_script(){
-  wp_enqueue_script(
-    'beedirect-init','https://code.jquery.com/jquery-3.4.1.min.js', 
-    array('jquery')
-  );
+  wp_enqueue_style('beedirect-rooms', plugin_dir_url( __FILE__ ) . 'widgets/rooms/assets/css/style.css?v=1.1');
+  wp_enqueue_style('beedirect-rooms-flatpikr', plugin_dir_url( __FILE__ ) . 'widgets/rooms/assets/css/flatpickr.min.css');
+  wp_enqueue_style('beedirect-rooms-font','https://use.fontawesome.com/releases/v5.13.0/css/all.css');
+
+  wp_enqueue_script('beedirect-init','https://code.jquery.com/jquery-3.4.1.min.js');
+  wp_enqueue_script('glide', 'https://cdn.jsdelivr.net/npm/@glidejs/glide', array ( 'jquery' ), true);
+
 }
 
 add_action('wp_enqueue_scripts','beedirect_init_script');

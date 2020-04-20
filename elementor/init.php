@@ -12,13 +12,13 @@ class Omnibees_Widget {
   }
   protected function __construct(){
     require_once( WP_PLUGIN_DIR .'/beedirect/widgets/price/index.php');
-    /*require_once( WP_PLUGIN_DIR .'/beedirect/widgets/rooms/index.php');*/
+    require_once( WP_PLUGIN_DIR .'/beedirect/widgets/rooms/index.php');
     add_action('elementor/widgets/widgets_registered', [$this, 'register_widgets']);
   }
 
   public function register_widgets(){
-    \Elementor\Plugin::instance()->widgets_manager->register_widget_type(new \Elementor\beeprice());
-    /*\Elementor\Plugin::instance()->widgets_manager->register_widget_type(new \Elementor\listRooms());*/
+    \Elementor\Plugin::instance()->widgets_manager->register_widget_type(new \Elementor\beePrice());
+    \Elementor\Plugin::instance()->widgets_manager->register_widget_type(new \Elementor\beeRooms());
   }
 }
 

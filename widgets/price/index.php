@@ -120,33 +120,33 @@ class beePrice extends Widget_Base {
         'selectors' => [
           '.beedirect__best-price .best-price-value' => 'color: {{priceColor}}'
         ],
-			]
-		);
+      ]
+    );
     $this->add_control(
-			'alignment',
-			[
-				'label' => __( 'Alignment', 'elementor' ),
+      'alignment',
+      [
+        'label' => __( 'Alignment', 'elementor' ),
         'type' => Controls_Manager::CHOOSE,
         'selectors' => [
           '.beedirect__best-price .omnibees-best-price' => 'text-align: {{alignment}}'
         ],
-				'options' => [
-					'left' => [
-						'title' => __( 'Left', 'elementor' ),
-						'icon' => 'fa fa-align-left',
-					],
-					'center' => [
-						'title' => __( 'Center', 'elementor' ),
-						'icon' => 'fa fa-align-center',
-					],
-					'right' => [
-						'title' => __( 'Right', 'elementor' ),
-						'icon' => 'fa fa-align-right',
-					],
-				],
-				'default' => 'right',
-			]
-		);
+        'options' => [
+          'left' => [
+            'title' => __( 'Left', 'elementor' ),
+            'icon' => 'fa fa-align-left',
+          ],
+          'center' => [
+            'title' => __( 'Center', 'elementor' ),
+            'icon' => 'fa fa-align-center',
+          ],
+          'right' => [
+            'title' => __( 'Right', 'elementor' ),
+            'icon' => 'fa fa-align-right',
+          ],
+        ],
+        'default' => 'right',
+      ]
+    );
     
     $this->end_controls_section();
   }
@@ -185,6 +185,20 @@ class beePrice extends Widget_Base {
     $(".static-price").hide();
     var timestamp = new Date();
     var timestampiso = timestamp.toISOString();
+
+    <?php
+      $beeCurrency =  $settings['currency'];
+      function getCurrencySymbol($beeCurrency){
+        switch ($beeCurrency) :
+          case 16: return "R$";
+          case 23: return "$"; 
+          case 34: return "€";
+          case 108: return "£";
+          case 109: return "$";
+        endswitch;
+      }
+    ?>
+
     function start_price(){
       console.log("abriu start");
         var obj;
@@ -209,18 +223,6 @@ class beePrice extends Widget_Base {
         ).then(function() {
             var bestPriceApi = "";
             if (obj["HotelStaysType"] !== null) {
-              <?php
-              $beeCurrency =  $settings['currency'];
-              function getCurrencySymbol($beeCurrency){
-                switch ($beeCurrency) :
-                  case 16: return "R$";
-                  case 23: return "$"; 
-                  case 34: return "€";
-                  case 108: return "£";
-                  case 109: return "$";
-                endswitch;
-              }
-              ?>
               $(".static-price").hide();
 
               bestPrice = obj.HotelStaysType.HotelStays[0].Price.AmountBeforeTax;
