@@ -241,6 +241,7 @@
 .omnibees-calendar input,
 .omnibees-calendar label,
 .omnibees-calendar select {
+  font-family: sans-serif;
   display: block;
   width: 100%;
   padding: 10px 5px;

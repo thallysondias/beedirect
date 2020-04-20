@@ -89,26 +89,26 @@ class beePrice extends Widget_Base {
       ]
     );
     $this->add_group_control(
-			Group_Control_Typography::get_type(),
-			[
+      Group_Control_Typography::get_type(),
+      [
         'name' => 'Value',
         'label' => __( 'Valor', 'elementor' ),
         'scheme' => Scheme_Typography::TYPOGRAPHY_2,
         'selectors' => [
           '.beedirect__best-price .best-price-value' => 'font-family: {{VALUE}}'
         ],
-			]
+      ]
     );
     $this->add_control(
-			'text_color',
-			[
-				'label' => __( 'Texto', 'elementor' ),
-				'type' => Controls_Manager::COLOR,
+    'text_color',
+      [
+        'label' => __( 'Texto', 'elementor' ),
+        'type' => Controls_Manager::COLOR,
         'default' => '#000',
         'selectors' => [
           '.beedirect__best-price .best-price-since' => 'color: {{text_color}}'
         ],
-			]
+      ]
     );
     $this->add_control(
       'priceColor',
@@ -179,9 +179,10 @@ class beePrice extends Widget_Base {
     }
   }
   </style>
-  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
   <script>
     console.log("BestPrice by Omnibees");
+    var $ = jQuery;
     $(".static-price").hide();
     var timestamp = new Date();
     var timestampiso = timestamp.toISOString();

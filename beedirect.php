@@ -4,7 +4,7 @@ ob_start();
   Plugin name: BeeDirect by Omnibees
   Plugin uri: widgets.omnibees.com/manual
   Description: Widgets to BeeDirect
-  Version: 0.1.1
+  Version: 0.1.3
   Author: Omnibees
   Author uri: www.omnibees.com
   License: GPlv2 or Later
@@ -45,15 +45,14 @@ function add_elementor_widget_categories( $elements_manager ) {
 add_action('elementor/elements/categories_registered','add_elementor_widget_categories');
 require_once('elementor/init.php');
 
-
 function beedirect_init_script(){
   wp_enqueue_style('beedirect-rooms', plugin_dir_url( __FILE__ ) . 'widgets/rooms/assets/css/style.css?v=1.3');
   wp_enqueue_style('beedirect-rooms-flatpikr', plugin_dir_url( __FILE__ ) . 'widgets/rooms/assets/css/flatpickr.min.css');
   wp_enqueue_style('beedirect-rooms-font','https://use.fontawesome.com/releases/v5.13.0/css/all.css');
 
-  wp_enqueue_script('beedirect-init','https://code.jquery.com/jquery-3.4.1.min.js');
-  wp_enqueue_script('glide', 'https://cdn.jsdelivr.net/npm/@glidejs/glide', array ( 'jquery' ), true);
-
+  wp_enqueue_script('jquery-recursive','https://code.jquery.com/jquery-3.4.1.min.js');
+  wp_enqueue_script('flatpickr', 'https://cdn.jsdelivr.net/npm/flatpickr', array ( 'jquery-recursive' ), true);
+  wp_enqueue_script('glide', 'https://cdn.jsdelivr.net/npm/@glidejs/glide', array ( 'jquery-recursive' ), true);
 }
 
 add_action('wp_enqueue_scripts','beedirect_init_script');

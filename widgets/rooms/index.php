@@ -91,12 +91,10 @@ class beeRooms extends Widget_Base {
     );
 ?>
 
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
   <div <?php echo $this->get_render_attribute_string('label_heading');?>>
     <div class="omnibees-list-rooms"></div>
   </div>
-  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-  
   <div class="omnibees-rooms-list">
     <div class="omnibees-calendar">
       <div class="flatpicker-omnibees">
@@ -142,7 +140,7 @@ class beeRooms extends Widget_Base {
       </div>
       <div class="omnibees-promocode">
         <label>Cod. Promocional</label>
-        <input type="text" name="Code" id="code">
+        <input type="text" name="Code" id="code" autocomplete="off">
       </div>
     </div>
     <div id="omnibees-rooms"></div>
@@ -150,6 +148,7 @@ class beeRooms extends Widget_Base {
 
   <script>
   console.log("Init Omnibees List Room");
+  var $ = jQuery;
   var listRoomsApi = {
     init: function() {
       listRoomsApi.selectedDate();
@@ -248,10 +247,6 @@ class beeRooms extends Widget_Base {
     },
 
     searchResult: function() {
-      <?php
-        $roomsCurrency =  $settings_rooms['rooms_currency'];
-        $roomsLanguage =  $settings_rooms['rooms_language'];
-      ?>
       var timestamp = new Date();
       var timestampiso = timestamp.toISOString();
       var specialCode = $('#code').val();
@@ -428,9 +423,9 @@ class beeRooms extends Widget_Base {
                       }
                       if (obj.RoomStaysType.RoomStays[a].RatePlans[g].Offers !== null) {
                         num2 = (obj.RoomStaysType.RoomStays[a].RoomRates[c].Total.TPA_Extensions.TotalDiscountValue);
-                        rooms += '<div class="old-price"><?php echo getCurrencySymbol($roomsCurrency) ?> ' + parseFloat(Math.round(((obj.RoomStaysType.RoomStays[a].RoomRates[c].Total.AmountBeforeTax) + (num2)) * 100) / 100).toFixed(2) + '</div>';
+                        rooms += '<div class="old-price">R$ ' + parseFloat(Math.round(((obj.RoomStaysType.RoomStays[a].RoomRates[c].Total.AmountBeforeTax) + (num2)) * 100) / 100).toFixed(2) + '</div>';
                       }
-                      rooms += '<span class="new-price"><?php echo getCurrencySymbol($roomsCurrency) ?> ' + parseFloat(Math.round(obj.RoomStaysType.RoomStays[a].RoomRates[c].Total.AmountBeforeTax * 100) / 100).toFixed(2) + '</span>';
+                      rooms += '<span class="new-price">R$ ' + parseFloat(Math.round(obj.RoomStaysType.RoomStays[a].RoomRates[c].Total.AmountBeforeTax * 100) / 100).toFixed(2) + '</span>';
                       rooms += '</div>';
 
                       //rate-price
@@ -515,7 +510,7 @@ class beeRooms extends Widget_Base {
   </script>
 
   <script type="text/javascript">
-    jQuery(document).ready(function($) {
+    jQuery(document).ready(function(){
       listRoomsApi.init();
     });
   </script>
