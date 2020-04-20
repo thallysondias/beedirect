@@ -46,6 +46,8 @@ BE Footer -> http://widgets.omnibees.com/wordpress/print-rodape.JPG
 Control Panel -> http://widgets.omnibees.com/wordpress/print-painel.JPG
 
 == Changelog ==
+= 0.1.0 =
+* Novo widget para lista de quartos disponiveis
 = 0.0.9 =
 * Corrige as casas decimais dos centavos
 = 0.0.8 =

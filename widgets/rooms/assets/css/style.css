@@ -413,4 +413,7 @@
   .omnibees-rooms-list .room-avaiable-rates{
     height: 210px;
   }
+  .omnibees-rooms-list .guest-box {
+    width: 100%;
+  }
 }

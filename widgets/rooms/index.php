@@ -172,6 +172,8 @@ class beeRooms extends Widget_Base {
 
         var checkInFormated = checkIn.split("-").reverse().join("-");
         var checkOutFormated = checkOut.split("-").reverse().join("-");
+        var checkInClean = checkInOut.split('→')[0].replace(/[.*+?^=!:${}()|\[\]\/\\]/g, "");
+        var checkOutClean = checkInOut.split('→')[1].replace(/[.*+?^=!:${}()|\[\]\/\\]/g, "");
         $('#checkin').val(checkInFormated);
         $('#checkout').val(checkOutFormated);
 
@@ -248,17 +250,29 @@ class beeRooms extends Widget_Base {
       ?>
       var timestamp = new Date();
       var timestampiso = timestamp.toISOString();
+      var specialCode = $('#code').val();
       var guestAdult = $('#adult-filter option:selected').val();
       var guestChild = $('#child-filter option:selected').val();
       var guestInfant = $('#infant-filter option:selected').val();
       var totalChild = parseInt(guestChild) + parseInt(guestInfant);
       var checkInOut = $('#checkInOut').val().replace(/\s/g, '');
+      var checkInClean = checkInOut.split('→')[0].replace(/[.*+?^=!:${}()|\[\]\/\\]/g, "");
+      var checkOutClean = checkInOut.split('→')[1].replace(/[.*+?^=!:${}()|\[\]\/\\]/g, "");
       var checkIn = checkInOut.split('→')[0].replace(/[.*+?^=!:${}()|\[\]\/\\]/g, "-");
       var checkOut = checkInOut.split('→')[1].replace(/[.*+?^=!:${}()|\[\]\/\\]/g, "-");
       var checkInFormated = checkIn.split("-").reverse().join("-");
       var checkOutFormated = checkOut.split("-").reverse().join("-");
 
       $("#guest-information").val(guestAdult + " Adultos" + ", " + totalChild + " Crianças" );
+
+      var ages = "";
+      for (i = 0; i < guestChild; i++) {
+        ages += "12;";
+      }
+      for (i = 0; i < guestInfant; i++) {
+        ages += "1;";
+      }
+      var ageChilds = ages.slice(0, -1);
 
       $('#checkin').val(checkInFormated);
       $('#checkout').val(checkOutFormated);
@@ -417,7 +431,7 @@ class beeRooms extends Widget_Base {
 
                       //rate-price
                       rooms += '<div class="rate-book">';
-                      rooms += "<a target='_blank' href='https://myreservations.omnibees.com/book.aspx?packuid=0&roomnums=0&q=2825&CheckIn=01052020&CheckOut=05052020&NRooms=1&ad=2&ch=0&ag=-&Code=&group_code=&lang=pt-BR&rateuids=" + obj.RoomStaysType.RoomStays[a].RoomRates[c].RatePlanID + "&roomuids=" + obj.RoomStaysType.RoomStays[a].RoomRates[c].RoomID + "' class='precolink'><span class='text'>RESERVAR</span></a> ";
+                      rooms += "<a target='_blank' href='https://myreservations.omnibees.com/book.aspx?packuid=0&roomnums=0&q=<?php echo $settings_rooms['rooms_hotel_id'] ?>&CheckIn="+ checkInClean +"&CheckOut="+ checkOutClean +"&NRooms=1&ad="+ guestAdult +"&ch="+ totalChild +"&ag="+ageChilds+"&Code="+ specialCode +"&group_code=&lang=pt-BR&rateuids=" + obj.RoomStaysType.RoomStays[a].RoomRates[c].RatePlanID + "&roomuids=" + obj.RoomStaysType.RoomStays[a].RoomRates[c].RoomID + "' class='precolink'><span class='text'>RESERVAR</span></a> ";
 
                       rooms += '</div>'; //rate-book
                       rooms += '</div>'; //rate-details
@@ -433,7 +447,6 @@ class beeRooms extends Widget_Base {
         }
         //No avaiable rates
         else if (obj["RoomStaysType"] === null) {
-          console.log("erro");
           for (a in obj2.HotelDescriptiveContentsType.HotelDescriptiveContents[0].FacilityInfo.GuestRoomsType.GuestRooms) {
             rooms += '<div class="rates-content">';
             rooms += '<div class="room-details">';
@@ -482,7 +495,7 @@ class beeRooms extends Widget_Base {
             rooms += '<div class="room-avaiable-rates rates-off">';
             rooms += '<div class="rate-details">';
             rooms += '<div class="rate-description">';
-            rooms += '<div class="rate-name"><i class="fas fa-info-circle"></i><b>Não existem tarifas disponíveis para a data pesquisada.</b><br>Altere as datas da pesquisa ou navegue em nosso <a href="https://myreservations.omnibees.com/default.aspx?q=2825" target="_blank">Motor de Reserva</a></div>';
+            rooms += '<div class="rate-name"><i class="fas fa-info-circle"></i><b>Não existem tarifas disponíveis para a data pesquisada.</b><br>Altere as datas da pesquisa ou navegue em nosso <a href="https://myreservations.omnibees.com/default.aspx?q=<?php echo $settings_rooms['rooms_hotel_id'] ?>" target="_blank">Motor de Reserva</a></div>';
             rooms += "</div>";
             rooms += "</div>";
             rooms += '</div>'; //rates-content
