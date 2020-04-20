@@ -200,7 +200,6 @@ class beePrice extends Widget_Base {
     ?>
 
     function start_price(){
-      console.log("abriu start");
         var obj;
         var settings = {
             "async": true,

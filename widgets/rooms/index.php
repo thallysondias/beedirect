@@ -94,11 +94,12 @@ class beeRooms extends Widget_Base {
   <div <?php echo $this->get_render_attribute_string('label_heading');?>>
     <div class="omnibees-list-rooms"></div>
   </div>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-
+  
   <div class="omnibees-rooms-list">
     <div class="omnibees-calendar">
-      <div class=flatpicker>
+      <div class="flatpicker-omnibees">
         <label>Estadia</label>
         <input id="checkInOut" type="text" data-input>
         <input name="CheckIn" type="hidden" id="checkin" value=""/>
@@ -140,7 +141,7 @@ class beeRooms extends Widget_Base {
         </div>
       </div>
       <div class="omnibees-promocode">
-        <label>Codigo Promocional</label>
+        <label>Cod. Promocional</label>
         <input type="text" name="Code" id="code">
       </div>
     </div>
@@ -182,7 +183,7 @@ class beeRooms extends Widget_Base {
 
       }, 500);
 
-      $(".flatpicker").flatpickr({
+      $(".flatpicker-omnibees").flatpickr({
         mode: "range",
         minDate: "today",
         dateFormat: "d/m/Y",

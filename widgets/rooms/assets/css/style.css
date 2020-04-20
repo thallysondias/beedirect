@@ -250,7 +250,7 @@
   border: none;
   box-sizing: border-box;
 }
-.omnibees-calendar .flatpicker,
+.omnibees-calendar .flatpicker-omnibees,
 .omnibees-calendar .omnibees-guest,
 .omnibees-calendar .omnibees-promocode {
   display: inline-block;
@@ -258,7 +258,7 @@
   flex: 1;
   margin: 0 5px;
 }
-.omnibees-calendar .flatpicker {
+.omnibees-calendar .flatpicker-omnibees {
   flex: 2;
 }
 .omnibees-rooms-list .guest-box{
@@ -318,7 +318,7 @@
 .omnibees-rooms-list .guest-box button:hover{
   opacity: 0.7;
 }
-.omnibees-calendar .flatpicker:after {
+.omnibees-calendar .flatpicker-omnibees:after {
   font-family: "Font Awesome 5 Free";
   content: "\f073";
   position: absolute;

@@ -4,7 +4,7 @@ ob_start();
   Plugin name: BeeDirect by Omnibees
   Plugin uri: widgets.omnibees.com/manual
   Description: Widgets to BeeDirect
-  Version: 0.1.0
+  Version: 0.1.1
   Author: Omnibees
   Author uri: www.omnibees.com
   License: GPlv2 or Later
@@ -47,7 +47,7 @@ require_once('elementor/init.php');
 
 
 function beedirect_init_script(){
-  wp_enqueue_style('beedirect-rooms', plugin_dir_url( __FILE__ ) . 'widgets/rooms/assets/css/style.css?v=1.2');
+  wp_enqueue_style('beedirect-rooms', plugin_dir_url( __FILE__ ) . 'widgets/rooms/assets/css/style.css?v=1.3');
   wp_enqueue_style('beedirect-rooms-flatpikr', plugin_dir_url( __FILE__ ) . 'widgets/rooms/assets/css/flatpickr.min.css');
   wp_enqueue_style('beedirect-rooms-font','https://use.fontawesome.com/releases/v5.13.0/css/all.css');
 
