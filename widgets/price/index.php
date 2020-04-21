@@ -182,7 +182,6 @@ class beePrice extends Widget_Base {
 
   <script>
     console.log("BestPrice by Omnibees");
-    var $ = jQuery;
     $(".static-price").hide();
     var timestamp = new Date();
     var timestampiso = timestamp.toISOString();
@@ -236,7 +235,7 @@ class beePrice extends Widget_Base {
             }
         });
     }
-    jQuery(document).ready(function(){
+    jQuery(document).ready(function($){
       setTimeout(function(){
         start_price();
       },3000);

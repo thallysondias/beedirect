@@ -22,13 +22,13 @@
   position: relative;
 }
 .omnibees-rooms-list .room-photos {
-  max-width: 1030px;
-  width: 390px;
+  max-width: 390px;
+  width: 40%;
   margin-right: 20px;
   position: relative;
   border-radius: 5px;
   overflow: hidden;
-  flex: 0 0 390px;
+  flex: 0 0 40%;
 }
 .omnibees-rooms-list .room-photos .room-photos-carrousel {
   border-radius: 8px;
@@ -70,12 +70,34 @@
 }
 .omnibees-rooms-list .room-description h3 {
   font-size: 23px;
+  max-width: 90%;
 }
 .omnibees-rooms-list .room-description .room-description,
 .omnibees-rooms-list .room-description p {
   font-size: 16px;
   color: rgba(0, 0, 0, 0.7);
 }
+.omnibees-rooms-list .room-description p{
+  max-height: 220px;
+  overflow: auto;
+}
+
+.omnibees-rooms-list .room-description .room-description ::-webkit-scrollbar {
+  width: 7px;
+  background:transparent;
+  border:none;
+}
+.omnibees-rooms-list ::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px #f1f1f1;
+}
+.omnibees-rooms-list ::-webkit-scrollbar-thumb {
+  background: #cccccc;
+  border-radius:2px;
+}
+.omnibees-rooms-list ::-webkit-scrollbar-thumb:hover {
+  background: #c1c1c1;
+}
+
 .omnibees-rooms-list .room-description .room-max-occupation {
   position: absolute;
   top: 15px;
@@ -250,6 +272,7 @@
   line-height: 18px;
   border: none;
   box-sizing: border-box;
+  color:#111!important
 }
 .omnibees-calendar .flatpicker-omnibees,
 .omnibees-calendar .omnibees-guest,
@@ -394,6 +417,10 @@
   }
   .omnibees-rooms-list .omnibees-calendar {
     flex-direction: column;
+  }
+  .omnibees-rooms-list .room-description p{
+    max-height: auto;
+    overflow: auto;
   }
   .omnibees-rooms-list .room-avaiable-rates .rate-details {
     display: flex;

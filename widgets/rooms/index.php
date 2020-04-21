@@ -91,7 +91,6 @@ class beeRooms extends Widget_Base {
     );
 ?>
 
-<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
   <div <?php echo $this->get_render_attribute_string('label_heading');?>>
     <div class="omnibees-list-rooms"></div>
   </div>
@@ -148,7 +147,6 @@ class beeRooms extends Widget_Base {
 
   <script>
   console.log("Init Omnibees List Room");
-  var $ = jQuery;
   var listRoomsApi = {
     init: function() {
       listRoomsApi.selectedDate();
@@ -166,21 +164,6 @@ class beeRooms extends Widget_Base {
     selectedDate: function() {
       var today = new Date();
       var tomorrow = new Date(today.getTime() + (24 * 60 * 60 * 1000));
-
-      setTimeout(function() {
-        var checkInOut = $('#checkInOut').val().replace(/\s/g, '');
-
-        var checkIn = checkInOut.split(' → ')[0].replace(/[.*+?^=!:${}()|\[\]\/\\]/g, "-");
-        var checkOut = checkInOut.split(' → ')[1].replace(/[.*+?^=!:${}()|\[\]\/\\]/g, "-");
-
-        var checkInFormated = checkIn.split("-").reverse().join("-");
-        var checkOutFormated = checkOut.split("-").reverse().join("-");
-        var checkInClean = checkInOut.split('→')[0].replace(/[.*+?^=!:${}()|\[\]\/\\]/g, "");
-        var checkOutClean = checkInOut.split('→')[1].replace(/[.*+?^=!:${}()|\[\]\/\\]/g, "");
-        $('#checkin').val(checkInFormated);
-        $('#checkout').val(checkOutFormated);
-
-      }, 500);
 
       $(".flatpicker-omnibees").flatpickr({
         mode: "range",
@@ -510,8 +493,10 @@ class beeRooms extends Widget_Base {
   </script>
 
   <script type="text/javascript">
-    jQuery(document).ready(function(){
-      listRoomsApi.init();
+    jQuery(document).ready(function($){
+      setTimeout(function(){
+        listRoomsApi.init();
+      },500);
     });
   </script>
 
