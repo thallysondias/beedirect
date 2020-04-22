@@ -46,6 +46,9 @@ BE Footer -> http://widgets.omnibees.com/wordpress/print-rodape.JPG
 Control Panel -> http://widgets.omnibees.com/wordpress/print-painel.JPG
 
 == Changelog ==
+= 1.0.1 =
+* Correção de CSS
+* Aba de estilo para o elementor
 = 1.0.0 =
 * Versão estavel
 = 0.1.3 =

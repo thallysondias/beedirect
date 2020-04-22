@@ -76,6 +76,7 @@
 .omnibees-rooms-list .room-description p {
   font-size: 16px;
   color: rgba(0, 0, 0, 0.7);
+  line-height: 20px;
 }
 .omnibees-rooms-list .room-description p{
   max-height: 220px;
@@ -255,7 +256,6 @@
 .omnibees-calendar {
   display: flex;
   justify-content: space-between;
-  background: #e8b324;
   padding: 20px;
   color: #fff;
   border-radius: 5px;
@@ -272,6 +272,9 @@
   line-height: 18px;
   border: none;
   box-sizing: border-box;
+}
+.omnibees-calendar input,
+.omnibees-calendar select{
   color:#111!important
 }
 .omnibees-calendar .flatpicker-omnibees,
@@ -281,6 +284,7 @@
   position: relative;
   flex: 1;
   margin: 0 5px;
+  line-height: 1.5;
 }
 .omnibees-calendar .flatpicker-omnibees {
   flex: 2;
@@ -347,7 +351,7 @@
   content: "\f073";
   position: absolute;
   right: 10px;
-  bottom: 5px;
+  bottom: 3px;
   color: #000;
   font-size: 24px;
 }

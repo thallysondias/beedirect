@@ -79,7 +79,48 @@ class beeRooms extends Widget_Base {
         ],
       ]
     );
-    
+    $this->end_controls_section();
+
+    $this->start_controls_section(
+      'style_section',
+      [
+        'label' => __( 'Style Section', 'elementor' ),
+        'tab' => Controls_Manager::TAB_STYLE,
+      ]
+    );
+    $this->add_control(
+    'text_box',
+      [
+        'label' => __( 'Texto Bloco de Pesquisa', 'elementor' ),
+        'type' => Controls_Manager::COLOR,
+        'default' => '#fff',
+        'selectors' => [
+          '.omnibees-calendar' => 'color: {{text_box}}',
+          '.omnibees-calendar label' => 'color: {{text_box}}'
+        ],
+      ]
+    );
+    $this->add_control(
+      'box_color',
+      [
+        'name' => 'box_color',
+        'label' => __( 'Bloco de Pesquisa', 'elementor' ),
+        'type' => Controls_Manager::COLOR,
+        'default' => '#e8b324',
+        'selectors' => [
+          '.omnibees-calendar' => 'background: {{box_color}}'
+        ],
+      ]
+    );
+    $this->add_group_control(
+      Group_Control_Typography::get_type(),
+      [
+        'name' => 'title_typo',
+        'label' => __( 'Titulo', 'elementor' ),
+        'scheme' => Scheme_Typography::TYPOGRAPHY_1,
+        'selector' => '.room-description h3',
+      ]
+    );
     $this->end_controls_section();
   }
 

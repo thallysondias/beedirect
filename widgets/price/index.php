@@ -147,7 +147,6 @@ class beePrice extends Widget_Base {
         'default' => 'right',
       ]
     );
-    
     $this->end_controls_section();
   }
 
