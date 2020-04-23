@@ -198,8 +198,6 @@ class beeRooms extends Widget_Base {
 
     initListRooms: function() {
       listRoomsApi.searchResult();
-      listRoomsApi.initSlider();
-      listRoomsApi.showMoreRates();
     },
 
     selectedDate: function() {
@@ -528,8 +526,11 @@ class beeRooms extends Widget_Base {
         rooms += "</div>"; //omnibees-rooms-list
         $('#omnibees-rooms').html(rooms);
       });
-    },
-    omnibeesRenderListRooms: function() {}
+      setTimeout(function(){
+        listRoomsApi.initSlider();
+        listRoomsApi.showMoreRates();
+      },300);
+    }
   }
   </script>
 
