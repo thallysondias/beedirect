@@ -4,7 +4,7 @@ ob_start();
   Plugin name: BeeDirect by Omnibees
   Plugin uri: widgets.omnibees.com/manual
   Description: Widgets to BeeDirect
-  Version: 1.0.2
+  Version: 1.0.3
   Author: Omnibees
   Author uri: www.omnibees.com
   License: GPlv2 or Later
@@ -52,6 +52,7 @@ function beedirect_init_style(){
 }
 
 function beedirect_init_script(){
+  wp_deregister_script('jquery');
   wp_enqueue_script('jquery-3.4.1', 'https://code.jquery.com/jquery-3.4.1.min.js');
   wp_enqueue_script('flatpickr-omnibees', plugin_dir_url( __FILE__ ) . 'widgets/rooms/assets/js/flatpickr.min.js?v=omnibees' , array ( 'jquery-3.4.1' ), true);
   wp_enqueue_script('glide-omnibees', plugin_dir_url( __FILE__ ) . 'widgets/rooms/assets/js/glide.min.js?v=omnibees', array ( 'jquery-3.4.1' ), true);
