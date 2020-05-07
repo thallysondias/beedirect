@@ -180,60 +180,66 @@ class beePrice extends Widget_Base {
   </style>
 
   <script>
-    console.log("BestPrice by Omnibees");
-    $(".static-price").hide();
-    var timestamp = new Date();
-    var timestampiso = timestamp.toISOString();
+        console.log("BestPrice by Omnibees");
+        $(".static-price").hide();
+        var timestamp = new Date();
+        var timestampiso = timestamp.toISOString();
 
-    <?php
-      $beeCurrency =  $settings['currency'];
-      function getCurrencySymbol($beeCurrency){
-        switch ($beeCurrency) :
-          case 16: return "R$";
-          case 23: return "$"; 
-          case 34: return "€";
-          case 108: return "£";
-          case 109: return "$";
-        endswitch;
-      }
-    ?>
+        <?php
+          $beeCurrency =  $settings['currency'];
+          function getCurrencySymbol($beeCurrency){
+            switch ($beeCurrency) :
+              case 16: return "R$";
+              case 23: return "$"; 
+              case 34: return "€";
+              case 108: return "£";
+              case 109: return "$";
+            endswitch;
+          }
+        ?>
 
-    function start_price(){
-        var obj;
-        var settings = {
-            "async": true,
-            "crossDomain": true,
-            "url": "https://beapi.omnibees.com/api/BE/GetHotelAvail",
-            "method": "POST",
-            "headers": {
-                "Content-Type": "application/json",
-                "Authorization": "Bearer aab46c45b97d059671359e9bf122cc4a",
-                "Cache-Control": "no-cache"
-            },
-            "processData": false,
-            "data": '{"EchoToken":"aab46c45b97d059671359e9bf122cc4a","TimeStamp":"'+timestampiso+'","Target":1,"Version":0,"PrimaryLangID":8,"AvailRatesOnly":true,"BestOnly":true,"OnRequestInd":true,"IsModify":false,"RequestedCurrency":<?php echo $settings['currency'] ?>,"HotelSearchCriteria":{"AvailableOnlyIndicator":false,"Criterion":{"RoomStayCandidatesType":{"RoomStayCandidates":[{"GuestCountsType":{"GuestCounts":[{"Age":null,"AgeQualifyCode":10,"Count":1}]},"Quantity":1,"RPH":0,"BookingCode":""}]},"HotelRefs":[{"ChainCode":null,"HotelCode":<?php echo $settings['hotel_id'] ?>}],"GetPricesPerGuest":true,"StayDateRange":{"Duration":null,"Start":"<?php echo date("Y-m-d"); ?>","End":"<?php echo date("Y-m-d", strtotime('tomorrow')); ?>"},"RatePlanCandidatesType":{"RatePlanCandidates":[{"GroupCode":null,"PromotionCode":null}]},"TPA_Extensions":{"MultimediaObjects": {"SendData": true},"IsForMobile":false,"RatePlanID":"0"}}}'
-        };
-        $.when(
-          $.ajax(settings).done(function (response) {
-                obj = response;
-            }
-        ),
-        ).then(function() {
-            var bestPriceApi = "";
-            if (obj["HotelStaysType"] !== null) {
-              $(".static-price").hide();
+        function start_price(){
+            jQuery(document).ready(function($){
+            setTimeout(function(){
+                var obj;
+                var settings = {
+                    "async": true,
+                    "crossDomain": true,
+                    "url": "https://beapi.omnibees.com/api/BE/GetHotelAvail",
+                    "method": "POST",
+                    "headers": {
+                        "Content-Type": "application/json",
+                        "Authorization": "Bearer aab46c45b97d059671359e9bf122cc4a",
+                        "Cache-Control": "no-cache"
+                    },
+                    "processData": false,
+                    "data": '{"EchoToken":"aab46c45b97d059671359e9bf122cc4a","TimeStamp":"'+timestampiso+'","Target":1,"Version":0,"PrimaryLangID":8,"AvailRatesOnly":true,"BestOnly":true,"OnRequestInd":true,"IsModify":false,"RequestedCurrency":<?php echo $settings['currency'] ?>,"HotelSearchCriteria":{"AvailableOnlyIndicator":false,"Criterion":{"RoomStayCandidatesType":{"RoomStayCandidates":[{"GuestCountsType":{"GuestCounts":[{"Age":null,"AgeQualifyCode":10,"Count":1}]},"Quantity":1,"RPH":0,"BookingCode":""}]},"HotelRefs":[{"ChainCode":null,"HotelCode":<?php echo $settings['hotel_id'] ?>}],"GetPricesPerGuest":true,"StayDateRange":{"Duration":null,"Start":"<?php echo date("Y-m-d"); ?>","End":"<?php echo date("Y-m-d", strtotime('tomorrow')); ?>"},"RatePlanCandidatesType":{"RatePlanCandidates":[{"GroupCode":null,"PromotionCode":null}]},"TPA_Extensions":{"MultimediaObjects": {"SendData": true},"IsForMobile":false,"RatePlanID":"0"}}}'
+                };
+                $.when(
+                  $.ajax(settings).done(function (response) {
+                        obj = response;
+                    }
+                ),
+                ).then(function() {
+                    var bestPriceApi = "";
+                    if (obj["HotelStaysType"] !== null) {
+                      $(".static-price").hide();
 
-              bestPrice = obj.HotelStaysType.HotelStays[0].Price.AmountBeforeTax;
-              bestPriceApi += "<span class='best-price-since'><?php echo $settings['title'] ?> </span>"
-              bestPriceApi += "<span class='best-price-value'><?php echo getCurrencySymbol($beeCurrency) ?> " + parseFloat(Math.round(bestPrice * 100) / 100).toFixed(2) + "</span>";
-              $('.omnibees-best-price').html(bestPriceApi);
-            }else {
-              console.log("O hotel não possui tarifa para hoje");
-              $(".omnibees-best-price img").hide();
-              $(".static-price").show();
-            }
-        });
-    }
+                      bestPrice = obj.HotelStaysType.HotelStays[0].Price.AmountBeforeTax;
+                      bestPriceApi += "<span class='best-price-since'><?php echo $settings['title'] ?> </span>"
+                      bestPriceApi += "<span class='best-price-value'><?php echo getCurrencySymbol($beeCurrency) ?> " + parseFloat(Math.round(bestPrice * 100) / 100).toFixed(2) + "</span>";
+                      $('.omnibees-best-price').html(bestPriceApi);
+                    }else {
+                      console.log("O hotel não possui tarifa para hoje");
+                      $(".omnibees-best-price img").hide();
+                      $(".static-price").show();
+                    }
+                });
+            
+            },1);
+          });
+        }
+      
     jQuery(document).ready(function($){
       setTimeout(function(){
         start_price();
