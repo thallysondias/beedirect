@@ -46,6 +46,8 @@ BE Footer -> http://widgets.omnibees.com/wordpress/print-rodape.JPG
 Control Panel -> http://widgets.omnibees.com/wordpress/print-painel.JPG
 
 == Changelog ==
+= 1.1.0 =
+* Refeito todas as chamadas dependentes de Jquery
 = 1.0.2 =
 * Fix Js
 = 1.0.1 =
