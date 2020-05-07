@@ -53,8 +53,8 @@ function beedirect_init_style(){
 
 function beedirect_init_script(){
   wp_deregister_script('jquery');
-  wp_enqueue_script('jquery-3.4.1', 'https://code.jquery.com/jquery-3.4.1.min.js');
   wp_enqueue_script('jquery');
+  wp_enqueue_script('jquery-3.4.1', 'https://code.jquery.com/jquery-3.4.1.min.js');
   wp_enqueue_script('flatpickr-omnibees', plugin_dir_url( __FILE__ ) . 'widgets/rooms/assets/js/flatpickr.min.js?v=omnibees' , array ( 'jquery-3.4.1' ), true);
   wp_enqueue_script('glide-omnibees', plugin_dir_url( __FILE__ ) . 'widgets/rooms/assets/js/glide.min.js?v=omnibees', array ( 'jquery-3.4.1' ), true);
 }
