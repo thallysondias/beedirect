@@ -145,7 +145,7 @@ class beeRooms extends Widget_Base {
       </div>
       <div class="omnibees-guest">
         <label>Hóspedes</label>
-        <input type="text" id="guest-information" autocomplete="off" >
+        <input type="text" id="guest-information" autocomplete="off">
         <div class="guest-box">
           <span>Selecione os Hospedes</span>
           <div class="list-guest">
@@ -201,14 +201,15 @@ class beeRooms extends Widget_Base {
 
     selectedDate: function() {
       jQuery(document).ready(function($){
-        setTimeout(function(){      
+        setTimeout(function(){
           var today = new Date();
           var tomorrow = new Date(today.getTime() + (24 * 60 * 60 * 1000));
-            
+
           $(".flatpicker-omnibees").flatpickr({
             mode: "range",
             minDate: "today",
             dateFormat: "d/m/Y",
+            disableMobile: "true",
             showMonths: 2,
             locale: {
               firstDayOfWeek: 1,
@@ -224,21 +225,21 @@ class beeRooms extends Widget_Base {
             },
             wrap: true,
             defaultDate: ["today", tomorrow]
-          })      
+          })
         },1);
-      });      
+      });
     },
 
     listeningForm: function() {
       jQuery(document).ready(function($){
-      setTimeout(function() {
-        $("#checkInOut").change(function() {
-          listRoomsApi.initListRooms();
-        });
-        $("#code").change(function() {
-          listRoomsApi.initListRooms();
-        });
-      }, 1);
+        setTimeout(function() {
+          $("#checkInOut").change(function() {
+            listRoomsApi.initListRooms();
+          });
+          $("#code").change(function() {
+            listRoomsApi.initListRooms();
+          });
+        }, 1);
       });
     },
 
@@ -326,7 +327,7 @@ class beeRooms extends Widget_Base {
                 "Content-Type": "application/json",
                 "Authorization": "Bearer aab46c45b97d059671359e9bf122cc4a"
               },
-              "data": '{"EchoToken":"aab46c45b97d059671359e9bf122cc4a","TimeStamp":"' + timestampiso + '","Target":1,"Version":0,"PrimaryLangID":<?php echo $settings_rooms['rooms_language'] ?>,"AvailRatesOnly":true,"BestOnly":false,"RequestedCurrency":<?php echo $settings_rooms['rooms_currency'] ?>,"HotelSearchCriteria":{"AvailableOnlyIndicator":false,"Criterion":{"RoomStayCandidatesType":{"RoomStayCandidates":[{"GuestCountsType":{"GuestCounts":[{ "Age":18,"AgeQualifyCode":10,"Count":'+ guestAdult +'},{ "Age":15,"AgeQualifyCode":8,"Count":'+ guestChild +'},{ "Age":1,"AgeQualifyCode":7,"Count":'+ guestInfant +'}]} }]},"HotelRefs":[{"HotelCode":<?php echo $settings_rooms['rooms_hotel_id'] ?>}],"GetPricesPerGuest":true,"StayDateRange":{"Start":"' + checkInFormated + '","End":"' + checkOutFormated + '"},"TPA_Extensions":{"MultimediaObjects": {"SendData": true},"IsForMobile":false}}}}',
+              "data": '{"EchoToken":"aab46c45b97d059671359e9bf122cc4a","TimeStamp":"' + timestampiso + '","Target":1,"Version":0,"PrimaryLangID":<?php echo $settings_rooms['rooms_language'] ?>,"AvailRatesOnly":true,"BestOnly":false,"RequestedCurrency":<?php echo $settings_rooms['rooms_currency'] ?>,"HotelSearchCriteria":{"AvailableOnlyIndicator":false,"Criterion":{"RoomStayCandidatesType":{"RoomStayCandidates":[{"GuestCountsType":{"GuestCounts":[{ "Age":18,"AgeQualifyCode":10,"Count":'+ guestAdult +'},{ "Age":15,"AgeQualifyCode":8,"Count":'+ guestChild +'},{ "Age":1,"AgeQualifyCode":7,"Count":'+ guestInfant +'}]} }]},"HotelRefs":[{"HotelCode":<?php echo $settings_rooms['rooms_hotel_id'] ?>}],"GetPricesPerGuest":true,"StayDateRange":{"Start":"' + checkInFormated + '","End":"' + checkOutFormated + '"},"RatePlanCandidatesType":{"RatePlanCandidates":[{"GroupCode":null,"PromotionCode":"' + specialCode + '"}]},"TPA_Extensions":{"MultimediaObjects": {"SendData": true},"IsForMobile":false}}}}',
             }
           }else if((guestChild > 0) && (guestInfant == 0)){
             var settings = {
@@ -336,7 +337,7 @@ class beeRooms extends Widget_Base {
                 "Content-Type": "application/json",
                 "Authorization": "Bearer aab46c45b97d059671359e9bf122cc4a"
               },
-              "data": '{"EchoToken":"aab46c45b97d059671359e9bf122cc4a","TimeStamp":"' + timestampiso + '","Target":1,"Version":0,"PrimaryLangID":<?php echo $settings_rooms['rooms_language'] ?>,"AvailRatesOnly":true,"BestOnly":false,"RequestedCurrency":<?php echo $settings_rooms['rooms_currency'] ?>,"HotelSearchCriteria":{"AvailableOnlyIndicator":false,"Criterion":{"RoomStayCandidatesType":{"RoomStayCandidates":[{"GuestCountsType":{"GuestCounts":[{ "Age":18,"AgeQualifyCode":10,"Count":'+ guestAdult +'},{ "Age":15,"AgeQualifyCode":8,"Count":'+ guestChild +'}]} }]},"HotelRefs":[{"HotelCode":<?php echo $settings_rooms['rooms_hotel_id'] ?>}],"GetPricesPerGuest":true,"StayDateRange":{"Start":"' + checkInFormated + '","End":"' + checkOutFormated + '"},"TPA_Extensions":{"MultimediaObjects": {"SendData": true},"IsForMobile":false}}}}',
+              "data": '{"EchoToken":"aab46c45b97d059671359e9bf122cc4a","TimeStamp":"' + timestampiso + '","Target":1,"Version":0,"PrimaryLangID":<?php echo $settings_rooms['rooms_language'] ?>,"AvailRatesOnly":true,"BestOnly":false,"RequestedCurrency":<?php echo $settings_rooms['rooms_currency'] ?>,"HotelSearchCriteria":{"AvailableOnlyIndicator":false,"Criterion":{"RoomStayCandidatesType":{"RoomStayCandidates":[{"GuestCountsType":{"GuestCounts":[{ "Age":18,"AgeQualifyCode":10,"Count":'+ guestAdult +'},{ "Age":15,"AgeQualifyCode":8,"Count":'+ guestChild +'}]} }]},"HotelRefs":[{"HotelCode":<?php echo $settings_rooms['rooms_hotel_id'] ?>}],"GetPricesPerGuest":true,"StayDateRange":{"Start":"' + checkInFormated + '","End":"' + checkOutFormated + '"},"RatePlanCandidatesType":{"RatePlanCandidates":[{"GroupCode":null,"PromotionCode":"' + specialCode + '"}]},"TPA_Extensions":{"MultimediaObjects": {"SendData": true},"IsForMobile":false}}}}',
             }
           }else if((guestChild == 0) && (guestInfant > 0)){
             var settings = {
@@ -346,7 +347,7 @@ class beeRooms extends Widget_Base {
                 "Content-Type": "application/json",
                 "Authorization": "Bearer aab46c45b97d059671359e9bf122cc4a"
               },
-              "data": '{"EchoToken":"aab46c45b97d059671359e9bf122cc4a","TimeStamp":"' + timestampiso + '","Target":1,"Version":0,"PrimaryLangID":<?php echo $settings_rooms['rooms_language'] ?>,"AvailRatesOnly":true,"BestOnly":false,"RequestedCurrency":<?php echo $settings_rooms['rooms_currency'] ?>,"HotelSearchCriteria":{"AvailableOnlyIndicator":false,"Criterion":{"RoomStayCandidatesType":{"RoomStayCandidates":[{"GuestCountsType":{"GuestCounts":[{ "Age":18,"AgeQualifyCode":10,"Count":'+ guestAdult +'},{ "Age":1,"AgeQualifyCode":7,"Count":'+ guestInfant +'}]} }]},"HotelRefs":[{"HotelCode":<?php echo $settings_rooms['rooms_hotel_id'] ?>}],"GetPricesPerGuest":true,"StayDateRange":{"Start":"' + checkInFormated + '","End":"' + checkOutFormated + '"},"TPA_Extensions":{"MultimediaObjects": {"SendData": true},"IsForMobile":false}}}}',
+              "data": '{"EchoToken":"aab46c45b97d059671359e9bf122cc4a","TimeStamp":"' + timestampiso + '","Target":1,"Version":0,"PrimaryLangID":<?php echo $settings_rooms['rooms_language'] ?>,"AvailRatesOnly":true,"BestOnly":false,"RequestedCurrency":<?php echo $settings_rooms['rooms_currency'] ?>,"HotelSearchCriteria":{"AvailableOnlyIndicator":false,"Criterion":{"RoomStayCandidatesType":{"RoomStayCandidates":[{"GuestCountsType":{"GuestCounts":[{ "Age":18,"AgeQualifyCode":10,"Count":'+ guestAdult +'},{ "Age":1,"AgeQualifyCode":7,"Count":'+ guestInfant +'}]} }]},"HotelRefs":[{"HotelCode":<?php echo $settings_rooms['rooms_hotel_id'] ?>}],"GetPricesPerGuest":true,"StayDateRange":{"Start":"' + checkInFormated + '","End":"' + checkOutFormated + '"},"RatePlanCandidatesType":{"RatePlanCandidates":[{"GroupCode":null,"PromotionCode":"' + specialCode + '"}]},"TPA_Extensions":{"MultimediaObjects": {"SendData": true},"IsForMobile":false}}}}',
             }
           }else{
             var settings = {
@@ -356,7 +357,7 @@ class beeRooms extends Widget_Base {
                 "Content-Type": "application/json",
                 "Authorization": "Bearer aab46c45b97d059671359e9bf122cc4a"
               },
-              "data": '{"EchoToken":"aab46c45b97d059671359e9bf122cc4a","TimeStamp":"' + timestampiso + '","Target":1,"Version":0,"PrimaryLangID":<?php echo $settings_rooms['rooms_language'] ?>,"AvailRatesOnly":true,"BestOnly":false,"RequestedCurrency":<?php echo $settings_rooms['rooms_currency'] ?>,"HotelSearchCriteria":{"AvailableOnlyIndicator":false,"Criterion":{"RoomStayCandidatesType":{"RoomStayCandidates":[{"GuestCountsType":{"GuestCounts":[{ "Age":18,"AgeQualifyCode":10,"Count":'+ guestAdult +'}]} }]},"HotelRefs":[{"HotelCode":<?php echo $settings_rooms['rooms_hotel_id'] ?>}],"GetPricesPerGuest":true,"StayDateRange":{"Start":"' + checkInFormated + '","End":"' + checkOutFormated + '"},"TPA_Extensions":{"MultimediaObjects": {"SendData": true},"IsForMobile":false}}}}',
+              "data": '{"EchoToken":"aab46c45b97d059671359e9bf122cc4a","TimeStamp":"' + timestampiso + '","Target":1,"Version":0,"PrimaryLangID":<?php echo $settings_rooms['rooms_language'] ?>,"AvailRatesOnly":true,"BestOnly":false,"RequestedCurrency":<?php echo $settings_rooms['rooms_currency'] ?>,"HotelSearchCriteria":{"AvailableOnlyIndicator":false,"Criterion":{"RoomStayCandidatesType":{"RoomStayCandidates":[{"GuestCountsType":{"GuestCounts":[{ "Age":18,"AgeQualifyCode":10,"Count":'+ guestAdult +'}]} }]},"HotelRefs":[{"HotelCode":<?php echo $settings_rooms['rooms_hotel_id'] ?>}],"GetPricesPerGuest":true,"StayDateRange":{"Start":"' + checkInFormated + '","End":"' + checkOutFormated + '"},"RatePlanCandidatesType":{"RatePlanCandidates":[{"GroupCode":null,"PromotionCode":"' + specialCode + '"}]},"TPA_Extensions":{"MultimediaObjects": {"SendData": true},"IsForMobile":false}}}}',
             }
           }
           var settings2 = {
@@ -366,7 +367,7 @@ class beeRooms extends Widget_Base {
               "Content-Type": "application/json",
               "Authorization": "Bearer aab46c45b97d059671359e9bf122cc4a"
             },
-            "data": '{"EchoToken":"aab46c45b97d059671359e9bf122cc4a","TimeStamp":"' + timestampiso + '","Target":1,"Version":0,"PrimaryLangID":1,"HotelDescriptiveInfosType":{"LangRequested":4,"HotelDescriptiveInfos":[{"HotelRef":{"HotelCode":<?php echo $settings_rooms['rooms_hotel_id'] ?>},"HotelInfo":{"SendData":true},"FacilityInfo":{"SendGuestRooms":true},"Policies":{"SendPolicies":true},"AreaInfo":{"SendRefPoints":true,"SendAttractions":true},"ContactInfo":{"SendData":true},"MultimediaObjects":{"SendData":true}}]}}',
+            "data": '{"EchoToken":"aab46c45b97d059671359e9bf122cc4a","TimeStamp":"' + timestampiso + '","Target":1,"Version":0,"PrimaryLangID":<?php echo $settings_rooms['rooms_language'] ?>,"HotelDescriptiveInfosType":{"LangRequested":4,"HotelDescriptiveInfos":[{"HotelRef":{"HotelCode":<?php echo $settings_rooms['rooms_hotel_id'] ?>},"HotelInfo":{"SendData":true},"FacilityInfo":{"SendGuestRooms":true},"Policies":{"SendPolicies":true},"AreaInfo":{"SendRefPoints":true,"SendAttractions":true},"ContactInfo":{"SendData":true},"MultimediaObjects":{"SendData":true}}]}}',
           }
           $.when(
             $.ajax(settings).done(function(response) {
@@ -431,13 +432,22 @@ class beeRooms extends Widget_Base {
                     if (obj.RoomStaysType.RoomStays[a].RoomTypes[b].RoomID == obj.RoomStaysType.RoomStays[a].RoomRates[c].RoomID && obj.RoomStaysType.RoomStays[a].RoomRates[c].Total !== null) {
                       for (g in obj.RoomStaysType.RoomStays[a].RatePlans) {
                         if (obj.RoomStaysType.RoomStays[a].RatePlans[g].RatePlanID == obj.RoomStaysType.RoomStays[a].RoomRates[c].RatePlanID) {
-                          rooms += '<div class="rate-details">';
+
+                          if( obj.RoomStaysType.RoomStays[a].RoomRates[c].Discount !== null){
+                            rooms += '<div class="rate-details promotional-rate">';
+                          }else{
+                            rooms += '<div class="rate-details">';
+                          }
                           rooms += '<div class="rate-description">';
+                          //Rate promotional?
+                          if( obj.RoomStaysType.RoomStays[a].RoomRates[c].Discount !== null){
+                            rooms += "<p class='promotional-name'><i class='fas fa-tags'></i> " + obj.RoomStaysType.RoomStays[a].RatePlans[g].RatePlanName + "</p>";
+                          }
                           rooms += '<div class="rate-name"><i class="fas fa-info-circle"></i>' + obj.RoomStaysType.RoomStays[a].RatePlans[g].CancelPenalties[0].PenaltyDescription.Name + '</div>';
                           rooms += '<ul class="rate-info">';
                           //Has meal?
                           if (obj.RoomStaysType.RoomStays[a].RatePlans[g].MealsIncluded !== null && obj.RoomStaysType.RoomStays[a].RatePlans[g].MealsIncluded.MealPlanCode == "1" || obj.RoomStaysType.RoomStays[a].RatePlans[g].MealsIncluded !== null && obj.RoomStaysType.RoomStays[a].RatePlans[g].MealsIncluded.MealPlanCode == "3") {
-                            rooms += '<li><i class="fas fa-utensils"></i>' + obj.RoomStaysType.RoomStays[a].RatePlans[g].MealsIncluded.Name + +'</li>';
+                            rooms += '<li><i class="fas fa-utensils"></i>' + obj.RoomStaysType.RoomStays[a].RatePlans[g].MealsIncluded.Name + '</li>';
                           }
                           //Amenities Included
                           if (obj.RoomStaysType.RoomStays[a].RatePlans[g].RatePlanInclusions !== null) {

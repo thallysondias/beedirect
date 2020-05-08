@@ -123,6 +123,20 @@
   justify-content: center;
   margin: 5px 10px;
 }
+.omnibees-rooms-list .room-avaiable-rates .rate-details.promotional-rate{
+  border: 1px dashed green;
+  background: rgba(219, 236, 225, 0.5);
+}
+.omnibees-rooms-list .room-avaiable-rates .rate-details.promotional-rate .rate-price{
+  background: #fff!important;
+}
+.omnibees-rooms-list .room-avaiable-rates .rate-details.promotional-rate .promotional-name{
+  color: green;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+
 .omnibees-rooms-list .room-avaiable-rates .rate-details .rate-description {
   align-items: flex-start;
   color: #2c2f33;
