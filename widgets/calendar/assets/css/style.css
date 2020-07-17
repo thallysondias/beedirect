@@ -1,0 +1,383 @@
+#black-background {
+	display: none;
+	align-items: center;
+	justify-content: center;
+	position: absolute;
+	z-index: 999;
+	left: 0;
+	right: 0;
+	margin-left: auto;
+	margin-right: auto;
+	width: 900px
+}
+
+#black-background .fechar {
+	display: none
+}
+
+#black-background .checkdiv {
+	display: none
+}
+
+.lightpick__month-title>.lightpick__select-months {
+	margin-right: 0;
+	text-transform: capitalize;
+	font-size: 22px;
+	font-weight: 300;
+	line-height: initial;
+	color: #fff!important;
+	font-family: inherit;
+	padding: 0;
+	margin-top: -5px;
+	margin-right: 5px;
+	border: none;
+	-webkit-appearance: none
+}
+
+.lightpick--inlined .lightpick__select-years {
+	color: #fff!important;
+	font-size: 22px;
+	letter-spacing: 1px;
+	font-weight: 300;
+	padding-left: 10px;
+	border: none;
+	-webkit-appearance: none
+}
+
+.padrao {
+	display: none;
+	padding: 10px;
+	border-radius: 0
+}
+
+.padrao.ativa {
+	display: block
+}
+.padrao select{
+    background-color: transparent;
+}
+.padrao #ag{
+    display:none;
+}
+.padrao #output,
+.padrao #output2 {
+	color: #fff;
+	text-align: left
+}
+
+.padrao #output input,
+.padrao #output2 input,
+.padrao #salvar-idade,
+.padrao #salvar-idade2 {
+	width: 100%!important
+}
+
+.padrao #salvar-idade,
+.padrao #salvar-idade2 {
+	display: block;
+	background: #ffba00;
+	color: #000000;
+	padding: 10px;
+	border-radius: 3px;
+	font-weight: 700;
+	text-transform: uppercase;
+	cursor: pointer;
+	margin-top: 10px!important;
+	height: 40px!important
+}
+
+ 
+#selecthotelv6 {
+	padding: 0
+}
+
+ 
+ .lightpick{position:absolute;z-index:99999;padding:4px;border-radius:4px;background-color:#fff;box-shadow:0 1px 3px rgba(0,0,0,.25);color:#000;font-family:system-ui,Roboto,Helvetica,Arial,sans-serif;line-height:1.125em}.lightpick--inlined{position:relative;display:inline-block}.lightpick,.lightpick *,.lightpick::after,.lightpick::before{box-sizing:border-box}.lightpick.is-hidden{display:none}.lightpick__months{display:grid;background-color:#eee;grid-template-columns:auto;grid-gap:1px}.lightpick--2-columns .lightpick__months{grid-template-columns:auto auto}.lightpick--3-columns .lightpick__months{grid-template-columns:auto auto auto}.lightpick--4-columns .lightpick__months{grid-template-columns:auto auto auto auto}.lightpick--5-columns .lightpick__months{grid-template-columns:auto auto auto auto auto}.lightpick__month{padding:4px;width:288px;background-color:#fff}.lightpick__month-title-bar{display:flex;margin-bottom:4px;justify-content:space-between;align-items:center}.lightpick__month-title{align-items:baseline;display:flex;margin-top:4px;margin-bottom:4px;margin-left:4px;font-size:16px;font-weight:400;line-height:24px;cursor:default;padding:0 4px;border-radius:4px}.lightpick__month-title>.lightpick__select{border:none;background-color:transparent;outline:0;-moz-appearance:none;-webkit-appearance:none;appearance:none}.lightpick__month-title>.lightpick__select:disabled{color:#333}.lightpick__month-title>.lightpick__select-months{margin-right:0;text-transform:capitalize;font-size:22px;font-weight:300;line-height:initial;color:#fff!important;font-family:inherit;padding:0;margin-top:-5px;margin-right:5px}.lightpick__toolbar{display:flex;text-align:right;justify-content:flex-end}.lightpick__close-action,.lightpick__next-action,.lightpick__previous-action{display:flex;margin-left:6px;width:32px;height:32px;outline:0;border:none;border-radius:50%;background-color:#ddd;justify-content:center;align-items:center}.lightpick__next-action,.lightpick__previous-action{font-size:20px}.lightpick__close-action{font-size:18px}.lightpick__close-action:active,.lightpick__next-action:active,.lightpick__previous-action:active{color:inherit}.lightpick__days-of-the-week{display:grid;grid-template-columns:repeat(7,1fr)}.lightpick__day-of-the-week{display:flex;font-size:11px;font-weight:700;justify-content:center;align-items:center}.lightpick__days{display:grid;grid-template-columns:repeat(7,1fr)}.lightpick__day{display:flex;height:40px;background-position:center center;background-size:contain;background-repeat:no-repeat;font-size:13px;justify-content:center;align-items:center;cursor:default}.lightpick__day.is-today{background-image:url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle fill='rgba(220, 50, 47, .5)' cx='16' cy='16' r='16'/%3E%3C/svg%3E");background-size:18.8% auto;background-position:center bottom;color:#dc322f}.lightpick__day:not(.is-disabled):hover{background-size:contain;background-image:url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle fill='%23E0E0E0' cx='16' cy='16' r='16'/%3E%3C/svg%3E")}.lightpick__day.is-disabled{opacity:.38;pointer-events:none}.lightpick__day.disabled-tooltip{pointer-events:auto}.lightpick__day.is-disabled.is-forward-selected{opacity:1}.lightpick__day.is-disabled.is-forward-selected:not(.is-start-date){background-color:rgba(38,139,210,.1);background-image:none}.lightpick__day.is-next-month,.lightpick__day.is-previous-month{opacity:.38}.lightpick__day.lightpick__day.is-in-range:not(.is-disabled){opacity:1}.lightpick__day.is-in-range{border-radius:0;background-color:rgba(38,139,210,.1);background-image:none}.lightpick__day.is-in-range:hover{background-image:url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle fill='rgba(38, 139, 210, 0.5)' cx='16' cy='16' r='16'/%3E%3C/svg%3E")}.lightpick__day.is-end-date.is-in-range.is-flipped,.lightpick__day.is-start-date.is-in-range{border-top-left-radius:50%;border-top-right-radius:0;border-bottom-right-radius:0;border-bottom-left-radius:50%;background-color:#268bd2;background-image:none}.lightpick__day.is-end-date.is-in-range,.lightpick__day.is-start-date.is-in-range.is-flipped{border-top-left-radius:0;border-top-right-radius:50%;border-bottom-right-radius:50%;border-bottom-left-radius:0;background-color:#268bd2;background-image:none}.lightpick__day.is-start-date.is-end-date{background-color:transparent;background-image:url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle fill='%23268BD2' cx='16' cy='16' r='16'/%3E%3C/svg%3E")}.lightpick__day.is-end-date,.lightpick__day.is-end-date:hover,.lightpick__day.is-start-date,.lightpick__day.is-start-date:hover{background-image:url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle fill='%23268BD2' cx='16' cy='16' r='16'/%3E%3C/svg%3E");background-size:auto;background-position:center;color:#fff;font-weight:700}.lightpick__tooltip{position:absolute;margin-top:-4px;padding:4px 8px;border-radius:4px;background-color:#fff;box-shadow:0 1px 3px rgba(0,0,0,.25);white-space:nowrap;font-size:11px;pointer-events:none}.lightpick__tooltip::before{position:absolute;bottom:-5px;left:calc(50% - 5px);border-top:5px solid rgba(0,0,0,.12);border-right:5px solid transparent;border-left:5px solid transparent;content:""}.lightpick__tooltip::after{position:absolute;bottom:-4px;left:calc(50% - 4px);border-top:4px solid #fff;border-right:4px solid transparent;border-left:4px solid transparent;content:""}.lightpick__footer{display:flex;justify-content:space-between}.lightpick__apply-action,.lightpick__reset-action{border-radius:5px;font-size:12px;border:none}.lightpick__reset-action{color:#fff;background-color:#aeacad}.lightpick__apply-action{color:#fff;background-color:#2495f3}.lightpick--inlined{width:900px;border-radius:5px;box-shadow:0 0 15px 0 rgba(0,0,0,.08);border:none;padding:25px;background-color:#000}.lightpick--inlined *{color:#fff;font-family:unset}.lightpick--inlined .lightpick__tooltip{color:#000}.lightpick--inlined .lightpick__inner{background:0 0;position:relative}.lightpick--inlined .lightpick__toolbar{justify-content:space-between;position:absolute;top:0;left:0;width:100%;padding:0 20px}.lightpick--inlined .lightpick__next-action,.lightpick--inlined .lightpick__previous-action{background:0 0;margin:0;cursor:pointer;padding:0;opacity:0;z-index:5}.lightpick--inlined .lightpick__months{grid-gap:50px;background-color:#000}.lightpick--inlined .lightpick__month{width:100%;background-color:#000;line-height:1;padding:0}.lightpick--inlined .lightpick__month-title-bar{margin:0;margin-bottom:10px;padding-top:0;justify-content:center;position:relative}.lightpick--inlined .lightpick__month-title{margin-top:-5px;padding:0;width:auto}.lightpick--inlined .lightpick__month-title-bar #carrow1{position:absolute;top:8px;left:20px;width:12px}.lightpick--inlined .lightpick__month-title-bar #carrow2{position:absolute;top:8px;width:13px;right:20px}.lightpick--inlined .lightpick_month-string{text-transform:capitalize;font-size:24px;letter-spacing:1.1px;font-weight:500;margin-right:0}.lightpick--inlined .lightpick__select-years{color:#fff!important;font-size:22px;letter-spacing:1px;font-weight:300;padding-left:10px}.lightpick--inlined .lightpick__days-of-the-week{margin-bottom:10px}.lightpick--inlined .lightpick__day-of-the-week{color:#fff;font-size:13px;text-transform:capitalize;font-weight:300}.lightpick--inlined .lightpick__days{grid-auto-rows:60px;align-items:center;line-height:1}.lightpick--inlined .lightpick__day{position:relative;cursor:pointer;font-size:13px;letter-spacing:.5px;height:70%;font-weight:500}.lightpick--inlined .lightpick__day:hover{background:0 0;background-color:#a5a5a56b;border-radius:0}.lightpick--inlined .lightpick__day::after{position:absolute;bottom:-10px;left:0;width:100%;height:2%;content:"";background-color:#7d8081}.lightpick--inlined .lightpick__day.is-in-range{color:#fff;background-color:#ad8b30;border-radius:0}.lightpick--inlined .lightpick__day.is-start-date{border:solid 1px #ffba00;opacity:1!important;z-index:1;margin:0;padding-left:0;padding-right:0;color:#fff;background:#ffba00;border-radius:5px 0 0 5px}.lightpick--inlined .lightpick__day.is-start-date::after{bottom:-11px;width:103%;left:-1px}.lightpick--inlined .lightpick__day.is-start-date.is-flipped{border-radius:0}.lightpick--inlined .lightpick__day.is-end-date{border:solid 1px #ffba00;opacity:1!important;z-index:1;margin:0;padding-left:0;padding-right:0;color:#fff;background:#ffba00;border-radius:0 5px 5px 0!important}.lightpick--inlined .lightpick__day.is-end-date::after{bottom:-11px;width:103%;left:-1px}.lightpick--inlined .lightpick__day.is-end-date.is-flipped{border-radius:15px;z-index:1}.lightpick--inlined .lightpick__day.is-previous-month{opacity:.35;color:#fff;background:0 0!important;border-color:#000;pointer-events:none}.lightpick--inlined .lightpick__days>div{position:relative;height:70%}.lightpick--inlined .lightpick__days>div::after{position:absolute;bottom:-10px;left:0;width:100%;height:2%;content:"";background-color:#d6d6d6}.lightpick--inlined .is-disabled{opacity:1;color:#fff;opacity:.35}.lightpick--inlined .lightpick__days .lightpick__day:nth-child(29)::after,.lightpick--inlined .lightpick__days .lightpick__day:nth-child(30)::after,.lightpick--inlined .lightpick__days .lightpick__day:nth-child(31)::after,.lightpick--inlined .lightpick__days .lightpick__day:nth-child(32)::after,.lightpick--inlined .lightpick__days .lightpick__day:nth-child(33)::after,.lightpick--inlined .lightpick__days .lightpick__day:nth-child(34)::after,.lightpick--inlined .lightpick__days .lightpick__day:nth-child(35)::after{opacity:0}.lightpick--inlined .is-today{color:#fff!important;background:#ffba00;border-radius:0}.lightpick--inlined .lightpick__day::before{position:absolute;top:25px;opacity:.7;font-size:10px;color:#fff!important;font-weight:300}.lightpick--inlined .lightpick__day.is-in-range::before{opacity:1}.lightpick--inlined .lightpick__day.is-start-date::before{color:#fff!important}.lightpick--inlined .lightpick__day.is-end-date::before{color:#fff!important}.lightpick--inlined .lightpick__day.is-previous-month::before{opacity:0}.lightpick__tooltip{z-index:2}@media screen and (min-width:0\0) and (min-resolution:+72dpi){.lightpick--inlined select::-ms-expand{display:none}.lightpick--inlined select{-webkit-appearance:none;appearance:none}.lightpick--inlined select[disabled]{color:#fff!important}.lightpick--inlined .lightpick__months{display:flex}.lightpick--inlined .lightpick__month{flex:1}.lightpick--inlined .lightpick__month:nth-child(1){margin-right:15px}.lightpick--inlined .lightpick__month:nth-child(2){margin-left:15px}.lightpick--inlined .lightpick__days-of-the-week{display:flex}.lightpick--inlined .lightpick__day-of-the-week{flex-basis:calc(1 / 7 * 100%)}.lightpick--inlined .lightpick__days{display:flex;flex-wrap:wrap}.lightpick--inlined .lightpick__day::after{opacity:0!important}.lightpick--inlined .lightpick__days>div{flex-basis:calc(1 / 7 * 97%);height:45px;margin:8px 0;border:1px solid transparent}.lightpick--inlined .lightpick__days>div::after{opacity:0!important}.lightpick--inlined .lightpick__day.is-in-range{margin-left:0!important;margin-right:0!important;padding-left:0!important;padding-right:0!important}.lightpick--inlined .lightpick__day.is-start-date{padding-left:0!important;padding-right:0!important;border-top-right-radius:5px 0 0 5px;border-bottom-right-radius:0;padding-top:5px}.lightpick--inlined .lightpick__day.is-end-date{padding-left:0!important;padding-right:0!important;border-top-left-radius:0;border-bottom-left-radius:0}}
+@keyframes text-shadow {
+	0% {
+		transform: translateY(0);
+		text-shadow: 0 0 0 #000000
+	}
+	20% {
+		transform: translateY(-4px);
+		text-shadow: 0 0 0 #000000
+	}
+	40% {
+		transform: translateY(2px);
+		text-shadow: 0 0 0 #000000
+	}
+	60% {
+		transform: translateY(-1px);
+		text-shadow: 0 0 0 #000000
+	}
+	80% {
+		transform: translateY(0);
+		text-shadow: 0 0 0 #000000
+	}
+}
+ 
+ 
+#omnibees-calendar {
+	position: relative;
+	text-align: center;
+    margin: auto;
+	width: 100%;
+ 
+}
+ 
+#checkin-consolav6,#checkout-consolav6{
+    display:none;
+}
+
+#omnibees-calendar .booking .data {
+	position: relative;
+	margin: 0;
+	height: 50px;
+	padding: 2px;
+    width: 150px;
+}
+ 
+#omnibees-calendar .booking label {
+	font-size: 14px;
+	width: 100%;
+	display: inline-block;
+	text-align: center
+}
+ 
+#omnibees-calendar .booking select option {
+	color: #ffffff!important
+}
+
+.booking select option:not(:checked) {
+	color: #ffffff!important
+}
+ 
+ 
+.lightpick__month-title>.lightpick__select-months {
+	margin-right: 0;
+	text-transform: capitalize;
+	font-size: 22px;
+	font-weight: 300;
+	line-height: initial;
+	color: #fff!important;
+	font-family: inherit;
+	padding: 0;
+	margin-top: -5px;
+	margin-right: 5px;
+	border: none;
+	-webkit-appearance: none
+}
+
+.lightpick--inlined .lightpick__select-years {
+	color: #fff!important;
+	font-size: 22px;
+	letter-spacing: 1px;
+	font-weight: 300;
+	padding-left: 10px;
+	border: none;
+	-webkit-appearance: none
+}
+
+#selecthotelv6 {
+	padding: 0
+}
+ 
+ 
+
+@keyframes text-shadow {
+	0% {
+		transform: translateY(0);
+		text-shadow: 0 0 0 #000000
+	}
+	20% {
+		transform: translateY(-4px);
+		text-shadow: 0 0 0 #000000
+	}
+	40% {
+		transform: translateY(2px);
+		text-shadow: 0 0 0 #000000
+	}
+	60% {
+		transform: translateY(-1px);
+		text-shadow: 0 0 0 #000000
+	}
+	80% {
+		transform: translateY(0);
+		text-shadow: 0 0 0 #000000
+	}
+}
+
+#black-background {
+	display: none;
+	align-items: center;
+	justify-content: center;
+	position: absolute;
+	z-index: 999;
+	left: 0;
+	right: 0;
+	margin-left: auto;
+	margin-right: auto;
+	width: 900px
+}
+
+#black-background .fechar {
+	display: none
+}
+
+#black-background .checkdiv {
+	display: none
+}
+
+#omnibees-calendar .booking {
+	margin: 0 auto;
+	max-width: 950px;
+	padding: 16px 0;
+	font-size: 12px;
+	display: table;
+	width: 100%;
+	position: relative;
+	z-index: 1;
+	clear: both;
+	text-align: center;
+	min-height: 60px
+}
+  
+#omnibees-calendar .booking label {
+	font-size: 14px;
+	width: 100%;
+	display: inline-block;
+	text-align: center
+}
+ 
+
+#omnibees-calendar .booking .row {
+	padding: 0;
+	margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+}
+
+#omnibees-calendar .booking button {
+    padding: 0;
+    margin: 0; 
+    height: 100%;
+    width: 100%;
+    font-weight: 500;
+    outline: 0;
+    cursor: pointer;
+    border: none;
+    border-radius: 2px;
+    text-decoration:none;
+}
+ 
+#omnibees-calendar .booking input,
+#omnibees-calendar .booking select {
+	height: 100%;
+	width: 100%;
+	margin: 0;
+	border: none;
+	outline: 0;
+	cursor: pointer;
+	border-radius: 0;
+	text-align-last: left;
+	z-index: 999;
+	padding-left: 10px;
+	border-radius: 2px;
+ 
+}
+
+#omnibees-calendar .booking select option {
+	color: #fff
+}
+
+#omnibees-calendar .booking input::-webkit-input-placeholder {
+	color: #fff;
+	opacity: 1
+}
+
+#omnibees-calendar .booking input:-moz-placeholder {
+	color: #fff;
+	opacity: 1
+}
+
+#omnibees-calendar .booking input::-moz-placeholder {
+	color: #fff;
+	opacity: 1
+}
+
+#omnibees-calendar .booking input:-ms-input-placeholder {
+	color: #fff
+}
+ 
+#omnibees-calendar .booking select option {
+	color: #fff
+}
+
+#omnibees-calendar .booking .child-box {
+	padding: 10px;
+	border-radius: 0;
+	display: none
+}
+
+#omnibees-calendar .booking .child-box span {
+	color: #fff;
+	text-align: left;
+	font-size: 14px;
+	display: block;
+	margin-left: 5px
+}
+#omnibees-calendar .booking #save-guest {
+	padding: 10px;
+	border-radius: 3px;
+	cursor: pointer
+}
+
+#omnibees-calendar .booking .child-box select {
+	margin-bottom: 10px;
+    background-color: transparent;
+}
+
+#omnibees-calendar .data .fa {
+	position: absolute;
+	right: 25px;
+	width: 10px;
+	font-size: 20px;
+	height: 15px;
+	top: 15px
+}
+ 
+.lightpick__month-title>.lightpick__select-months {
+	margin-right: 0;
+	text-transform: capitalize;
+	font-size: 22px;
+	font-weight: 300;
+	line-height: initial;
+	color: #fff!important;
+	font-family: inherit;
+	padding: 0;
+	margin-top: -5px;
+	margin-right: 5px;
+	border: none;
+	-webkit-appearance: none
+}
+
+.lightpick--inlined .lightpick__select-years {
+	color: #fff!important;
+	font-size: 22px;
+	letter-spacing: 1px;
+	font-weight: 300;
+	padding-left: 10px;
+	border: none;
+	-webkit-appearance: none
+}
+ 
+@media (min-width:768px) and (max-width:1024px) {
+	#omnibees-calendar .booking {
+		min-width: auto
+	}
+	#black-background .fechar {
+		display: none
+	}
+}
+
+@media (max-width:400px){.adultos,.criancas{display:none}.data .inc{display:block;opacity:1;position:absolute;margin-top:12px;transition:all .2s ease;color:#fff;margin-left:260px}.data .dec{display:block;opacity:1;position:absolute;margin-top:12px;transition:all .2s ease;color:#fff;margin-left:110px}.data:hover .inc{position:absolute;margin-top:12px;opacity:1;transition:all .5s ease}.data:hover .dec{position:absolute;margin-top:12px;opacity:1;transition:all .5s ease}#consola-v6,#consola-v6-fixado{z-index:1;width:auto}#consola-v6-fixado .booking form,#omnibees-calendar .booking form{display:block}#consola-v6-fixado .booking,#omnibees-calendar .booking{min-width:auto;padding:0}#consola-v6-fixado .booking .data,#omnibees-calendar .booking .data{position:relative;margin:0;background:#fff;border-radius:2px}#consola-v6-fixado .booking label,#omnibees-calendar .booking label{margin-bottom:0}#consola-v6-fixado .booking .text-center,#omnibees-calendar .booking .text-center{margin:0}#consola-v6-fixado .booking input,#consola-v6-fixado .booking select,#omnibees-calendar .booking input,#omnibees-calendar .booking select{width:100%;font-size:14px}#consola-v6-fixado .booking button,#omnibees-calendar .booking button{margin:0;color:#fff;text-transform:uppercase;font-size:15px;width:100%;height:50px;outline:0;border-radius:0}#consola-v6-fixado .booking .row,#omnibees-calendar .booking .row{justify-content:center}.lightpick--inlined{width:100%!important}.lightpick--inlined .lightpick__toolbar{position:relative!important}.lightpick--inlined .lightpick__toolbar{width:auto;padding:0}.lightpick--inlined .lightpick__next-action,.lightpick--inlined .lightpick__previous-action{opacity:1!important}.lightpick__month-title>.lightpick__select-months{width:auto;font-family:unset!important;font-weight:100!important}#black-background{align-items:center;justify-content:center;position:fixed;left:0;right:0;margin-left:auto;margin-right:auto;z-index:20;top:0;transform:translateY(0);height:100%;background-color:#000;box-sizing:border-box;visibility:visible;opacity:1;filter:none;transition:opacity .4s ease,visibility 1ms linear,transform .4s ease-out;width:auto}.x{position:relative;height:40px;transition:transform .25s ease-in-out;width:40px;margin:auto;float:right;right:30px}.x:before{content:"";position:absolute;display:block;margin:auto;left:0;right:0;top:0;bottom:0;width:32px;height:0;border-top:1px solid #fff;transform:rotate(45deg);transform-origin:center}.x:after{content:"";position:absolute;display:block;margin:auto;left:0;right:0;top:0;bottom:0;width:32px;height:0;border-top:1px solid #fff;transform:rotate(-45deg);transform-origin:center}#black-background .fechar{color:#fff;height:auto;width:100%;z-index:999;font-size:30px;text-align:right;cursor:pointer;display:block}#black-background .checkdiv{color:#fff;height:auto;width:100%;z-index:999;font-size:20px;text-align:center;display:block}.lightpick--inlined .lightpick__day::before{font-size:10px!important}.lightpick--inlined .lightpick__select-years{width:auto!important;padding-left:0!important}.lightpick__month-title>.lightpick__select-months{padding-left:0!important}#calendar-inputs{width:95%}.lightpick--inlined{box-shadow:none!important}.lightpick__toolbar{justify-content:flex-end!important;padding:0!important}.lightpick--inlined .lightpick__select-years{padding-left:0}.lightpick__month-title>.lightpick__select-months{direction:ltr}.button .tooltiptext{left:0;margin-left:0}}

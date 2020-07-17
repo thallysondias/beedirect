@@ -479,7 +479,7 @@ class beeRooms extends Widget_Base {
 
                           //rate-price
                           rooms += '<div class="rate-book">';
-                          rooms += "<a target='_blank' href='https://myreservations.omnibees.com/book.aspx?packuid=0&roomnums=0&q=<?php echo $settings_rooms['rooms_hotel_id'] ?>&CheckIn="+ checkInClean +"&CheckOut="+ checkOutClean +"&NRooms=1&ad="+ guestAdult +"&ch="+ totalChild +"&ag="+ageChilds+"&Code="+ specialCode +"&group_code=&lang=pt-BR&rateuids=" + obj.RoomStaysType.RoomStays[a].RoomRates[c].RatePlanID + "&roomuids=" + obj.RoomStaysType.RoomStays[a].RoomRates[c].RoomID + "' class='precolink'><span class='text'>RESERVAR</span></a> ";
+                          rooms += "<a target='_blank' href='https://book.omnibees.com/bookdetails?packuid=0&roomnums=0&q=<?php echo $settings_rooms['rooms_hotel_id'] ?>&CheckIn="+ checkInClean +"&CheckOut="+ checkOutClean +"&NRooms=1&ad="+ guestAdult +"&ch="+ totalChild +"&ag="+ageChilds+"&Code="+ specialCode +"&group_code=&lang=pt-BR&rateuids=" + obj.RoomStaysType.RoomStays[a].RoomRates[c].RatePlanID + "&roomuids=" + obj.RoomStaysType.RoomStays[a].RoomRates[c].RoomID + "' class='precolink'><span class='text'>RESERVAR</span></a> ";
 
                           rooms += '</div>'; //rate-book
                           rooms += '</div>'; //rate-details
@@ -543,7 +543,7 @@ class beeRooms extends Widget_Base {
                 rooms += '<div class="room-avaiable-rates rates-off">';
                 rooms += '<div class="rate-details">';
                 rooms += '<div class="rate-description">';
-                rooms += '<div class="rate-name"><i class="fas fa-info-circle"></i><b>Não existem tarifas disponíveis para a data pesquisada.</b><br>Altere as datas da pesquisa ou navegue em nosso <a href="https://myreservations.omnibees.com/default.aspx?q=<?php echo $settings_rooms['rooms_hotel_id'] ?>" target="_blank">Motor de Reserva</a></div>';
+                rooms += '<div class="rate-name"><i class="fas fa-info-circle"></i><b>Não existem tarifas disponíveis para a data pesquisada.</b><br>Altere as datas da pesquisa ou navegue em nosso <a href="https://book.omnibees.com/bookdetails?q=<?php echo $settings_rooms['rooms_hotel_id'] ?>" target="_blank">Motor de Reserva</a></div>';
                 rooms += "</div>";
                 rooms += "</div>";
                 rooms += '</div>'; //rates-content

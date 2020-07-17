@@ -1,5 +1,4 @@
 <?php
-ob_start();
 /*
   Plugin name: BeeDirect by Omnibees
   Plugin uri: widgets.omnibees.com/manual
@@ -8,7 +7,11 @@ ob_start();
   Author: Omnibees
   Author uri: www.omnibees.com
   License: GPlv2 or Later
+  Text Domain: beedirect
 */
+
+if(!defined('ABSPATH'))
+exit;
 
 require 'update-checker/plugin-update-checker.php';
 $myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
@@ -29,7 +32,11 @@ function beedirect() {
                  90);
 }
 function beedirect_omnibees() {
+  //Load Page
   include_once ('admin/index.php');
+
+  //Load Assets
+  wp_enqueue_style('beedirect', plugin_dir_url( __FILE__ ) . 'assets/beedirect-style.css?v=omnibees1');
 }
 
 function add_elementor_widget_categories( $elements_manager ) {
@@ -65,7 +72,6 @@ function beedirect_listrooms_init() {
     });
   </script>';
 }
-
 
 add_action('wp_enqueue_scripts','beedirect_init_style', 9999);
 add_action('wp_footer','beedirect_init_script');

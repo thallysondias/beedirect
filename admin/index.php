@@ -16,32 +16,26 @@ function be_opt(){
   }
 }
 ?>
-</style>
 
-<!--Mensagem de Sucesso-->
+<!--Sucess Messsage-->
 <?php if(isset($_POST['be_submit']) && $chk):?>
   <div id="message" class="updated">
-    <p><b>Motor de reserva atualizado!</b><br>
-      <i>Booking Engine Updated</i>
-    </p>
+    <p><b>Atualizado!</b></p>
   </div>
 <?php endif;?>
 
-<div class="background-plugin">
-  <div class="content-plugin">
-    <form method="post" action="">
-      <div class="passo-plugin">
-        <div class="input-plugin">
-          ID Omnibees
-          <input type="text" name="q" value="<?php echo get_option('omnibees_id');?>"/>
-        </div>
-        <div class="input-plugin">
-          Token
-          <input type="text" name="token" value="<?php echo get_option('omnibees_token');?>"/>
-        </div>
-      </div>
-      <input type="submit" name="be_submit" value="Guardar Alterações" class="button-primary" />
-    </form>
-  </div>
-  <br>
+<div class="wrap">
+  <h1>BeeDirect by Omnibees</h1>
+
+  <form method="post" action="">
+
+    <table class="form-table">
+      <tr>
+        <td class="title">Omnibees Token</td>
+        <td class="token-input"><input type="text" name="token" value="<?php echo get_option('omnibees_token');?>"/></td>
+      </tr>
+    </table>
+
+    <input type="submit" name="be_submit" value="Guardar Alterações" class="button-primary" />
+  </form>
 </div>

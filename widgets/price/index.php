@@ -180,10 +180,6 @@ class beePrice extends Widget_Base {
   </style>
 
   <script>
-        console.log("BestPrice by Omnibees");
-        $(".static-price").hide();
-        var timestamp = new Date();
-        var timestampiso = timestamp.toISOString();
 
         <?php
           $beeCurrency =  $settings['currency'];
@@ -199,8 +195,12 @@ class beePrice extends Widget_Base {
         ?>
 
         function start_price(){
-            jQuery(document).ready(function($){
+          jQuery(document).ready(function($){
             setTimeout(function(){
+                console.log("BestPrice by Omnibees");
+                $(".static-price").hide();
+                var timestamp = new Date();
+                var timestampiso = timestamp.toISOString();
                 var obj;
                 var settings = {
                     "async": true,
