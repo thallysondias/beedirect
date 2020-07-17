@@ -9,7 +9,7 @@ class beeCalendar extends Widget_Base {
     return 'Calendar';
   }
   public function get_icon(){
-    return 'fa fa-label';
+    return 'fas fa-tags';
   }
   public function get_categories(){
     return ['Omnibees'];
@@ -80,17 +80,8 @@ class beeCalendar extends Widget_Base {
       ]
     );
     $this->end_controls_section();
-
-      
-      
-      
-      
-      
-      
-      
-      
-      
-$this->start_controls_section(
+    
+    $this->start_controls_section(
       'style_section',
       [
         'label' => __( 'Geral', 'elementor' ),
@@ -126,19 +117,15 @@ $this->start_controls_section(
         ],
       ]
     );  
-      
- $this->end_controls_section();      
-      
+    $this->end_controls_section();
  
-$this->start_controls_section(
+    $this->start_controls_section(
       'style_section2',
       [
         'label' => __( 'Campos de Input', 'elementor' ),
         'tab' => Controls_Manager::TAB_STYLE,
       ]
     );   
-      
-      
     $this->add_control(
     'engine_fields_background',
       [
@@ -193,10 +180,7 @@ $this->start_controls_section(
       ]
     ); 
     $this->end_controls_section();
-      
-      
-            
-      
+    
     $this->start_controls_section(
           'style_section_btn',
           [
@@ -239,15 +223,9 @@ $this->start_controls_section(
           ]
         );
       
-     $this->end_controls_section();      
-      
-      
-   
-      
-      
-      
+        $this->end_controls_section();  
             
-    $this->start_controls_section(
+        $this->start_controls_section(
           'style_section_child',
           [
             'label' => __( 'Box Criança', 'elementor' ),
@@ -317,13 +295,7 @@ $this->start_controls_section(
             'selector' => '#omnibees-calendar .booking #save-guest,#omnibees-calendar .padrao #salvar-idade'
           ]
         );
-     $this->end_controls_section();      
-      
-      
-      
-      
- 
-      
+        $this->end_controls_section();
   }
 
   protected function render(){
@@ -409,7 +381,7 @@ $this->start_controls_section(
  </div>
 
  <script>
-jQuery(document).ready(function($){
+   jQuery(document).ready(function($){
       setTimeout(function(){
         $("#infant-filter").on("change keyup blur", function () {
             var a, e = $(this).val();
@@ -688,7 +660,7 @@ jQuery(document).ready(function($){
     </script>
     <script>
         
-jQuery(document).ready(function($){
+    jQuery(document).ready(function($){
       setTimeout(function(){
     $("#black-background .fechar").click(function () {
         $("#black-background").css("display", "none");
