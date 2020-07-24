@@ -209,7 +209,7 @@ class beeRooms extends Widget_Base {
             mode: "range",
             minDate: "today",
             dateFormat: "d/m/Y",
-            disableMobile: "true",
+            disableMobile: "false",
             showMonths: 2,
             locale: {
               firstDayOfWeek: 1,
@@ -440,10 +440,11 @@ class beeRooms extends Widget_Base {
                           }
                           rooms += '<div class="rate-description">';
                           //Rate promotional?
-                          if( obj.RoomStaysType.RoomStays[a].RoomRates[c].Discount !== null){
+                         /* if( obj.RoomStaysType.RoomStays[a].RoomRates[c].Discount !== null){
                             rooms += "<p class='promotional-name'><i class='fas fa-tags'></i> " + obj.RoomStaysType.RoomStays[a].RatePlans[g].RatePlanName + "</p>";
-                          }
-                          rooms += '<div class="rate-name"><i class="fas fa-info-circle"></i>' + obj.RoomStaysType.RoomStays[a].RatePlans[g].CancelPenalties[0].PenaltyDescription.Name + '</div>';
+                          }*/
+                          //rooms += '<div class="rate-name"><i class="fas fa-info-circle"></i>' + obj.RoomStaysType.RoomStays[a].RatePlans[g].CancelPenalties[0].PenaltyDescription.Name + '</div>';
+                          rooms += "<p class='promotional-name'><i class='fas fa-tags'></i> " + obj.RoomStaysType.RoomStays[a].RatePlans[g].RatePlanName + "</p>";
                           rooms += '<ul class="rate-info">';
                           //Has meal?
                           if (obj.RoomStaysType.RoomStays[a].RatePlans[g].MealsIncluded !== null && obj.RoomStaysType.RoomStays[a].RatePlans[g].MealsIncluded.MealPlanCode == "1" || obj.RoomStaysType.RoomStays[a].RatePlans[g].MealsIncluded !== null && obj.RoomStaysType.RoomStays[a].RatePlans[g].MealsIncluded.MealPlanCode == "3") {
