@@ -204,28 +204,69 @@ class beeRooms extends Widget_Base {
         setTimeout(function(){
           var today = new Date();
           var tomorrow = new Date(today.getTime() + (24 * 60 * 60 * 1000));
-
-          $(".flatpicker-omnibees").flatpickr({
-            mode: "range",
-            minDate: "today",
-            dateFormat: "d/m/Y",
-            disableMobile: "false",
-            showMonths: 2,
-            locale: {
-              firstDayOfWeek: 1,
-              weekdays: {
-                shorthand: ["Dom", "Seg", "Ter", "Qua", "Qui", "Sex", "Sáb"],
-                longhand: ["Domingo", "Segunda-feira", "Terça-feira", "Quarta-feira", "Quinta-feira", "Sexta-feira", "Sábado"],
-              },
-              months: {
-                shorthand: ["Jan", "Fev", "Mar", "Abr", "Mai", "Jun", "Jul", "Ago", "Set", "Out", "Nov", "Dez"],
-                longhand: ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"],
-              },
-              rangeSeparator: ' → '
-            },
-            wrap: true,
-            defaultDate: ["today", tomorrow]
-          })
+        
+            
+            
+            if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+                $(".flatpicker-omnibees").flatpickr({
+                    mode: "range",
+                    minDate: "today",
+                    dateFormat: "d/m/Y",
+                    disableMobile: "true",
+                    showMonths: 1,
+                    locale: {
+                      firstDayOfWeek: 1,
+                      weekdays: {
+                        shorthand: ["Dom", "Seg", "Ter", "Qua", "Qui", "Sex", "Sáb"],
+                        longhand: ["Domingo", "Segunda-feira", "Terça-feira", "Quarta-feira", "Quinta-feira", "Sexta-feira", "Sábado"],
+                      },
+                      months: {
+                        shorthand: ["Jan", "Fev", "Mar", "Abr", "Mai", "Jun", "Jul", "Ago", "Set", "Out", "Nov", "Dez"],
+                        longhand: ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"],
+                      },
+                      rangeSeparator: ' → '
+                    },
+                    wrap: true,
+                    defaultDate: ["today", tomorrow]
+                  })
+                
+                
+              } else   {
+                 $(".flatpicker-omnibees").flatpickr({
+                    mode: "range",
+                    minDate: "today",
+                    dateFormat: "d/m/Y",
+                    disableMobile: "true",
+                    showMonths: 2,
+                    locale: {
+                      firstDayOfWeek: 1,
+                      weekdays: {
+                        shorthand: ["Dom", "Seg", "Ter", "Qua", "Qui", "Sex", "Sáb"],
+                        longhand: ["Domingo", "Segunda-feira", "Terça-feira", "Quarta-feira", "Quinta-feira", "Sexta-feira", "Sábado"],
+                      },
+                      months: {
+                        shorthand: ["Jan", "Fev", "Mar", "Abr", "Mai", "Jun", "Jul", "Ago", "Set", "Out", "Nov", "Dez"],
+                        longhand: ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"],
+                      },
+                      rangeSeparator: ' → '
+                    },
+                    wrap: true,
+                    defaultDate: ["today", tomorrow]
+                  })
+              }
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
         },1);
       });
     },
