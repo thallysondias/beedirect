@@ -121,6 +121,41 @@ class beeRooms extends Widget_Base {
         'selector' => '.room-description h3',
       ]
     );
+      
+      $this->add_control(
+      'btn_text_color',
+      [
+        'name' => 'btn_text_color',
+        'label' => __( 'Cor de botão', 'elementor' ),
+        'type' => Controls_Manager::COLOR,
+        'default' => '#000000',
+        'selectors' => [
+          '.precolink .text' => 'color: {{btn_text_color}}'
+        ],
+      ]
+    ); 
+    
+      $this->add_control(
+      'btn_text_background',
+      [
+        'name' => 'btn_text_background',
+        'label' => __( 'Fundo de botão', 'elementor' ),
+        'type' => Controls_Manager::COLOR,
+        'default' => '#e8b324',
+        'selectors' => [
+          '.precolink' => 'background: {{btn_text_background}}'
+        ],
+      ]
+    );
+      
+      
+      
+      
+      
+      
+      
+      
+      
     $this->end_controls_section();
   }
 
