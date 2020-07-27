@@ -143,7 +143,7 @@ class beeRooms extends Widget_Base {
         'type' => Controls_Manager::COLOR,
         'default' => '#e8b324',
         'selectors' => [
-          '.precolink' => 'background: {{btn_text_background}}'
+          '.omnibees-rooms-list .room-avaiable-rates .rate-details .rate-book a' => 'background: {{btn_text_background}}'
         ],
       ]
     );
