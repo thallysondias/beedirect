@@ -574,7 +574,7 @@ class beeRooms extends Widget_Base {
                     }
                   }
                   rooms += '</div>'; //rates-content
-                  rooms += '<div class="more-rates"><class="more-rates-child"> Mais opções de Preço <i class="fas fa-chevron-down"></i></div></div>';
+                  rooms += '<div class="more-rates"><div class="more-rates-child"> Mais opções de Preço <i class="fas fa-chevron-down"></i></div></div>';
                   rooms += "</div>"; //room-avaible-rates
                 }
               }
