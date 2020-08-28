@@ -3,7 +3,7 @@
   Plugin name: BeeDirect by Omnibees
   Plugin uri: widgets.omnibees.com/manual
   Description: Widgets to BeeDirect
-  Version: 1.4.1
+  Version: 1.4.2
   Author: Omnibees
   Author uri: www.omnibees.com
   License: GPlv2 or Later
@@ -53,7 +53,7 @@ add_action('elementor/elements/categories_registered','add_elementor_widget_cate
 require_once('elementor/init.php');
 
 function beedirect_init_style(){
-  wp_enqueue_style('beedirect-rooms', plugin_dir_url( __FILE__ ) . 'widgets/rooms/assets/css/style.css?v=2.1');
+  wp_enqueue_style('beedirect-rooms', plugin_dir_url( __FILE__ ) . 'widgets/rooms/assets/css/style.css?v=2.2');
   wp_enqueue_style('beedirect-calendar', plugin_dir_url( __FILE__ ) . 'widgets/calendar/assets/css/style.css?v=2.1');
   wp_enqueue_style('beedirect-rooms-flatpickr', plugin_dir_url( __FILE__ ) . 'widgets/rooms/assets/css/flatpickr.min.css');
   wp_enqueue_style('beedirect-rooms-font','https://use.fontawesome.com/releases/v5.13.0/css/all.css');
