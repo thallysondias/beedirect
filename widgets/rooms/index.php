@@ -354,6 +354,7 @@ class beeRooms extends Widget_Base {
         }, 1);
       });
     },
+      
 
     showMoreRates: function() {
       jQuery(document).ready(function($){

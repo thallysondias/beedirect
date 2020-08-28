@@ -6,7 +6,7 @@ Requires at least: 5.0.0
 Tested up to: 5.3.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Version: 1.3.9
+Version: 1.4.0
  
 
 == Description ==
@@ -29,6 +29,7 @@ Just install the plugin and set up the Omnibees Booking ID.
 The Booking Engine will be automatically inserted into the chosen layout
 
 == Frequently Asked Questions ==
+
 
 PT
 O que � necess�rio para utilizar o plugin?
