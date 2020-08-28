@@ -217,6 +217,11 @@ class beeRooms extends Widget_Base {
         <label>Cod. Promocional</label>
         <input type="text" name="Code" id="code" autocomplete="off">
       </div>
+      <div class="omnibees-search-result">
+        <button id="btn-search-result" type="button">Guardar</button>
+      </div>
+      
+      
     </div>
     <div id="omnibees-rooms"></div>
   </div>
@@ -309,12 +314,15 @@ class beeRooms extends Widget_Base {
     listeningForm: function() {
       jQuery(document).ready(function($){
         setTimeout(function() {
-          $("#checkInOut").change(function() {
+          /*$("#checkInOut").change(function() {
             listRoomsApi.initListRooms();
           });
           $("#code").change(function() {
             listRoomsApi.initListRooms();
-          });
+          });*/
+        $("#btn-search-result").click(function() {    
+             listRoomsApi.initListRooms();
+         });   
         }, 1);
       });
     },
@@ -565,7 +573,7 @@ class beeRooms extends Widget_Base {
                     }
                   }
                   rooms += '</div>'; //rates-content
-                  rooms += '<div class="more-rates">Mais opções de Preço <i class="fas fa-chevron-down"></i></div>';
+                  rooms += '<div class="more-rates"><class="more-rates-child"> Mais opções de Preço <i class="fas fa-chevron-down"></i></div></div>';
                   rooms += "</div>"; //room-avaible-rates
                 }
               }

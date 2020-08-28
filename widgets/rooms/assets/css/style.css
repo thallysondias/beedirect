@@ -255,13 +255,28 @@
   box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.1);
   transition: ease-in-out 0.2s all;
 }
+.omnibees-rooms-list .more-rates .more-rates-child{
+    width: 100%;
+    background: white;
+    max-width: fit-content;
+    padding: 5px 10px;
+    border-radius: 50px;
+    border: 2px solid #d2a803;
+    font-weight: 700;
+    display: flex;
+    flex-direction: revert;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
+}
+
 .omnibees-rooms-list .more-rates:hover {
   -webkit-box-shadow: 0px -2px 30px 0px rgba(0, 0, 0, 0.2);
   -moz-box-shadow: 0px -2px 30px 0px rgba(0, 0, 0, 0.2);
   box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.2);
 }
 .omnibees-rooms-list .more-rates .fas {
-  margin-left: 30px;
+  margin-left: 15px;
   transition: ease-in 0.2s all;
 }
 .omnibees-rooms-list .more-rates.arrow-rotate .fas {
