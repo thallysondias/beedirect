@@ -244,9 +244,7 @@ class beeRooms extends Widget_Base {
         setTimeout(function(){
           var today = new Date();
           var tomorrow = new Date(today.getTime() + (24 * 60 * 60 * 1000));
-        
-            
-            
+
             if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
                 $(".flatpicker-omnibees").flatpickr({
                     mode: "range",
@@ -321,6 +319,9 @@ class beeRooms extends Widget_Base {
             listRoomsApi.initListRooms();
           });*/
         $("#btn-search-result").click(function() {    
+            $('html, body').animate({
+                scrollTop: $("#omnibees-rooms").offset().top
+            }, 2000);
              listRoomsApi.initListRooms();
          });   
         }, 1);
