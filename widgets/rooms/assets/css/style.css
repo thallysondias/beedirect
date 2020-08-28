@@ -323,6 +323,7 @@
     flex-direction: column;
     justify-content: flex-end; 
 }
+
 .omnibees-calendar .omnibees-search-result #btn-search-result {
     background: #F4C714;
     border-radius: 3px;
