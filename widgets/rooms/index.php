@@ -182,7 +182,7 @@ class beeRooms extends Widget_Base {
         <label>Hóspedes</label>
         <input type="text" id="guest-information" autocomplete="off">
         <div class="guest-box">
-          <span>Selecione os Hospedes</span>
+          <span>Selecione os Hóspedes</span>
           <div class="list-guest">
             <label for="ad"><i class="fas fa-male"></i><i class="fas fa-female"></i></label>
             <select id="adult-filter" name="adult">
@@ -205,12 +205,12 @@ class beeRooms extends Widget_Base {
           <div class="list-guest">
             <label for="in"><i class="fas fa-baby"></i></label>
             <select id="infant-filter" name="infant">
-              <option value="0" selected>0 Bebe</option>
-              <option value="1">1 Bebe</option>
-              <option value="2">2 Bebe</option>
+              <option value="0" selected>0 Bebê</option>
+              <option value="1">1 Bebê</option>
+              <option value="2">2 Bebês</option>
             </select>
           </div>
-          <button id="save-guest" type="submit">Guardar</button>
+          <button id="save-guest" type="submit">Salvar</button>
         </div>
       </div>
       <div class="omnibees-promocode">
@@ -218,7 +218,7 @@ class beeRooms extends Widget_Base {
         <input type="text" name="Code" id="code" autocomplete="off">
       </div>
       <div class="omnibees-search-result">
-        <button id="btn-search-result" type="button">Guardar</button>
+        <button id="btn-search-result" type="button">Buscar</button>
       </div>
       
       
