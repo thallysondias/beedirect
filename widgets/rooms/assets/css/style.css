@@ -501,4 +501,9 @@
   .omnibees-rooms-list .guest-box {
     width: 100%;
   }
+  .omnibees-calendar .omnibees-search-result{
+    margin-top:15px;
+    margin-right: 5px;
+    margin-left: 5px;
+  }
 }
