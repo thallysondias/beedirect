@@ -183,6 +183,7 @@ class beePrice extends Widget_Base {
 
         <?php
         $beeCurrency =  $settings['currency'];
+      var symbol = '<?php echo $beeCurrency ;?>';
          /* 
           function getCurrencySymbol($beeCurrency){
             switch ($beeCurrency) :
@@ -231,22 +232,22 @@ class beePrice extends Widget_Base {
                       bestPriceApi += "<span class='best-price-since'><?php echo $settings['title'] ?> </span>";
                       //bestPriceApi += "<span class='best-price-value'>  <?php /* echo getCurrencySymbol($beeCurrency) */ ?> " + parseFloat(Math.round(bestPrice * 100) / 100).toFixed(2) + "</span>";
                         
-                        if ($beeCurrency == 16){ 
+                        if (symbol == 16){ 
                            bestPriceApi += "<span class='best-price-value'>R$ " + parseFloat(Math.round(bestPrice * 100) / 100).toFixed(2) + "</span>";
                         }
-                        if ($beeCurrency == 23){
+                        if (symbol == 23){
                            bestPriceApi += "<span class='best-price-value'>$ " + parseFloat(Math.round(bestPrice * 100) / 100).toFixed(2) + "</span>";
                         }
-                        if ($beeCurrency == 34){
+                        if (symbol == 34){
                            bestPriceApi += "<span class='best-price-value'>€ " + parseFloat(Math.round(bestPrice * 100) / 100).toFixed(2) + "</span>";
                         }
-                        if ($beeCurrency == 66){
+                        if (symbol == 66){
                            bestPriceApi += "<span class='best-price-value'>$ " + parseFloat(Math.round(bestPrice * 100) / 100).toFixed(2) + "</span>";
                         }
-                        if ($beeCurrency == 108){
+                        if (symbol == 108){
                            bestPriceApi += "<span class='best-price-value'>£ " + parseFloat(Math.round(bestPrice * 100) / 100).toFixed(2) + "</span>";
                         }
-                        if ($beeCurrency == 109){
+                        if (symbol == 109){
                            bestPriceApi += "<span class='best-price-value'>$ " + parseFloat(Math.round(bestPrice * 100) / 100).toFixed(2) + "</span>";
                         }
                         
