@@ -3,7 +3,7 @@
   Plugin name: BeeDirect by Omnibees
   Plugin uri: widgets.omnibees.com/manual
   Description: Widgets to BeeDirect
-  Version: 1.4.10
+  Version: 1.4.11
   Author: Omnibees
   Author uri: www.omnibees.com
   License: GPlv2 or Later

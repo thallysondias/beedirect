@@ -231,7 +231,7 @@ class beePrice extends Widget_Base {
                       bestPriceApi += "<span class='best-price-since'><?php echo $settings['title'] ?> </span>";
                       //bestPriceApi += "<span class='best-price-value'>  <?php /* echo getCurrencySymbol($beeCurrency) */ ?> " + parseFloat(Math.round(bestPrice * 100) / 100).toFixed(2) + "</span>";
                         
-                        if ($beeCurrency == 16){
+                        if ($beeCurrency == 16){ 
                            bestPriceApi += "<span class='best-price-value'>R$ " + parseFloat(Math.round(bestPrice * 100) / 100).toFixed(2) + "</span>";
                         }
                         if ($beeCurrency == 23){
