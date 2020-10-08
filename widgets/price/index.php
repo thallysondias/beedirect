@@ -230,7 +230,7 @@ class beePrice extends Widget_Base {
 
                       bestPrice = obj.HotelStaysType.HotelStays[0].Price.AmountBeforeTax;
                       bestPriceApi += "<span class='best-price-since'><?php echo $settings['title'] ?> </span>";
-                      bestPriceApi += "<span class='best-price-value'> R$<?php  echo getCurrencySymbol($beeCurrency)  ?> " + parseFloat(Math.round(bestPrice * 100) / 100).toFixed(2) + "</span>";
+                      bestPriceApi += "<span class='best-price-value'> R$<?php  echo $beeCurrency  ?> " + parseFloat(Math.round(bestPrice * 100) / 100).toFixed(2) + "</span>";
                       $('.omnibees-best-price').html(bestPriceApi);
                     }else {
                       console.log("O hotel não possui tarifa para hoje");
