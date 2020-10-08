@@ -17,7 +17,7 @@ class beePrice extends Widget_Base {
 
   protected function _register_controls(){
     $this->start_controls_section(
-      'section_ttle',
+      'section_title',
       [
         'label' => __('Content','elementor')
       ]
@@ -181,7 +181,22 @@ class beePrice extends Widget_Base {
 
   <script>
 
- 
+        <?php
+          $beeCurrency =  $settings['currency'];
+      
+        if (!function_exists('getCurrencySymbol')){
+          function getCurrencySymbol($beeCurrency){
+            switch ($beeCurrency) :
+              case 16: return "R$";
+              case 23: return "$"; 
+              case 34: return "€";
+              case 108: return "£";
+              case 109: return "$";
+            endswitch;
+          } 
+        } 
+        ?>
+
         function start_price(){
           jQuery(document).ready(function($){
             setTimeout(function(){
@@ -215,7 +230,7 @@ class beePrice extends Widget_Base {
 
                       bestPrice = obj.HotelStaysType.HotelStays[0].Price.AmountBeforeTax;
                       bestPriceApi += "<span class='best-price-since'><?php echo $settings['title'] ?> </span>";
-                      bestPriceApi += "<span class='best-price-value'> R$  " + parseFloat(Math.round(bestPrice * 100) / 100).toFixed(2) + "</span>";
+                      bestPriceApi += "<span class='best-price-value'> R$<?php  echo getCurrencySymbol($beeCurrency)  ?> " + parseFloat(Math.round(bestPrice * 100) / 100).toFixed(2) + "</span>";
                       $('.omnibees-best-price').html(bestPriceApi);
                     }else {
                       console.log("O hotel não possui tarifa para hoje");
