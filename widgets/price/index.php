@@ -158,7 +158,7 @@ class beePrice extends Widget_Base {
     );
 ?>
   <div <?php echo $this->get_render_attribute_string('label_heading');?>>
-    <div class="omnibees-best-price hotel-<?php echo $settings['hotel_id'] ?> " style="text-align:<?php echo $settings['alignment'] ?>">
+    <div class="omnibees-best-price hotel-<?php echo $settings['hotel_id'] ?>" id="hotel-<?php echo $settings['hotel_id'] ?>" style="text-align:<?php echo $settings['alignment'] ?>">
       <img src="<?php echo plugin_dir_url( __FILE__ ) ?>/assets/img/loading.svg" class="searching-price">
     </div>
   </div>
