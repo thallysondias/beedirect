@@ -158,7 +158,7 @@ class beePrice extends Widget_Base {
     );
 ?>
   <div <?php echo $this->get_render_attribute_string('label_heading');?>>
-    <div class="omnibees-best-price" style="text-align:<?php echo $settings['alignment'] ?>">
+    <div class="omnibees-best-price hotel-<?php echo $settings['hotel_id'] ?> " style="text-align:<?php echo $settings['alignment'] ?>">
       <img src="<?php echo plugin_dir_url( __FILE__ ) ?>/assets/img/loading.svg" class="searching-price">
     </div>
   </div>
@@ -182,9 +182,10 @@ class beePrice extends Widget_Base {
   <script>
 
         <?php
-        $beeCurrency =  $settings['currency'];
-      var symbol = '<?php echo $beeCurrency ;?>';
+       
          /* 
+          $beeCurrency =  $settings['currency'];
+       
           function getCurrencySymbol($beeCurrency){
             switch ($beeCurrency) :
               case 16: return "R$";
@@ -230,29 +231,7 @@ class beePrice extends Widget_Base {
 
                       bestPrice = obj.HotelStaysType.HotelStays[0].Price.AmountBeforeTax;
                       bestPriceApi += "<span class='best-price-since'><?php echo $settings['title'] ?> </span>";
-                      //bestPriceApi += "<span class='best-price-value'>  <?php /* echo getCurrencySymbol($beeCurrency) */ ?> " + parseFloat(Math.round(bestPrice * 100) / 100).toFixed(2) + "</span>";
-                        
-                        if (symbol == 16){ 
-                           bestPriceApi += "<span class='best-price-value'>R$ " + parseFloat(Math.round(bestPrice * 100) / 100).toFixed(2) + "</span>";
-                        }
-                        if (symbol == 23){
-                           bestPriceApi += "<span class='best-price-value'>$ " + parseFloat(Math.round(bestPrice * 100) / 100).toFixed(2) + "</span>";
-                        }
-                        if (symbol == 34){
-                           bestPriceApi += "<span class='best-price-value'>€ " + parseFloat(Math.round(bestPrice * 100) / 100).toFixed(2) + "</span>";
-                        }
-                        if (symbol == 66){
-                           bestPriceApi += "<span class='best-price-value'>$ " + parseFloat(Math.round(bestPrice * 100) / 100).toFixed(2) + "</span>";
-                        }
-                        if (symbol == 108){
-                           bestPriceApi += "<span class='best-price-value'>£ " + parseFloat(Math.round(bestPrice * 100) / 100).toFixed(2) + "</span>";
-                        }
-                        if (symbol == 109){
-                           bestPriceApi += "<span class='best-price-value'>$ " + parseFloat(Math.round(bestPrice * 100) / 100).toFixed(2) + "</span>";
-                        }
-                        
-          
-                     
+                      bestPriceApi += "<span class='best-price-value'> R$" + parseFloat(Math.round(bestPrice * 100) / 100).toFixed(2) + "</span>";
                       $('.omnibees-best-price').html(bestPriceApi);
                     }else {
                       console.log("O hotel não possui tarifa para hoje");
