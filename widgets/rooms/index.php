@@ -401,47 +401,104 @@ class beeRooms extends Widget_Base {
                     var obj, obj2;
                     var a, b, c, d, e, f, g, h, i, j, k, l;
 
-                    if ((guestChild > 0) && (guestInfant > 0)) {
-                        var settings = {
-                            "url": "https://beapi.omnibees.com/api/BE/GetHotelAvail",
-                            "method": "POST",
-                            "headers": {
-                                "Content-Type": "application/json",
-                                "Authorization": "Bearer aab46c45b97d059671359e9bf122cc4a"
-                            },
-                            "data": '{"EchoToken":"aab46c45b97d059671359e9bf122cc4a","TimeStamp":"' + timestampiso + '","Target":1,"Version":0,"PrimaryLangID":<?php echo $settings_rooms['rooms_language'] ?>,"AvailRatesOnly":true,"BestOnly":false,"RequestedCurrency":<?php echo $settings_rooms['rooms_currency'] ?>,"HotelSearchCriteria":{"AvailableOnlyIndicator":false,"Criterion":{"RoomStayCandidatesType":{"RoomStayCandidates":[{"GuestCountsType":{"GuestCounts":[{ "Age":18,"AgeQualifyCode":10,"Count":' + guestAdult + '},{ "Age":15,"AgeQualifyCode":8,"Count":' + guestChild + '},{ "Age":1,"AgeQualifyCode":7,"Count":' + guestInfant + '}]} }]},"HotelRefs":[{"HotelCode":<?php echo $settings_rooms['rooms_hotel_id'] ?>}],"GetPricesPerGuest":true,"StayDateRange":{"Start":"' + checkInFormated + '","End":"' + checkOutFormated + '"},"RatePlanCandidatesType":{"RatePlanCandidates":[{"GroupCode":null,"PromotionCode":"' + specialCode + '"}]},"TPA_Extensions":{"MultimediaObjects": {"SendData": true},"IsForMobile":true}}}}',
-                        }
-                    } else if ((guestChild > 0) && (guestInfant == 0)) {
-                        var settings = {
-                            "url": "https://beapi.omnibees.com/api/BE/GetHotelAvail",
-                            "method": "POST",
-                            "headers": {
-                                "Content-Type": "application/json",
-                                "Authorization": "Bearer aab46c45b97d059671359e9bf122cc4a"
-                            },
-                            "data": '{"EchoToken":"aab46c45b97d059671359e9bf122cc4a","TimeStamp":"' + timestampiso + '","Target":1,"Version":0,"PrimaryLangID":<?php echo $settings_rooms['rooms_language'] ?>,"AvailRatesOnly":true,"BestOnly":false,"RequestedCurrency":<?php echo $settings_rooms['rooms_currency'] ?>,"HotelSearchCriteria":{"AvailableOnlyIndicator":false,"Criterion":{"RoomStayCandidatesType":{"RoomStayCandidates":[{"GuestCountsType":{"GuestCounts":[{ "Age":18,"AgeQualifyCode":10,"Count":' + guestAdult + '},{ "Age":15,"AgeQualifyCode":8,"Count":' + guestChild + '}]} }]},"HotelRefs":[{"HotelCode":<?php echo $settings_rooms['rooms_hotel_id'] ?>}],"GetPricesPerGuest":true,"StayDateRange":{"Start":"' + checkInFormated + '","End":"' + checkOutFormated + '"},"RatePlanCandidatesType":{"RatePlanCandidates":[{"GroupCode":null,"PromotionCode":"' + specialCode + '"}]},"TPA_Extensions":{"MultimediaObjects": {"SendData": true},"IsForMobile":true}}}}',
-                        }
-                    } else if ((guestChild == 0) && (guestInfant > 0)) {
-                        var settings = {
-                            "url": "https://beapi.omnibees.com/api/BE/GetHotelAvail",
-                            "method": "POST",
-                            "headers": {
-                                "Content-Type": "application/json",
-                                "Authorization": "Bearer aab46c45b97d059671359e9bf122cc4a"
-                            },
-                            "data": '{"EchoToken":"aab46c45b97d059671359e9bf122cc4a","TimeStamp":"' + timestampiso + '","Target":1,"Version":0,"PrimaryLangID":<?php echo $settings_rooms['rooms_language'] ?>,"AvailRatesOnly":true,"BestOnly":false,"RequestedCurrency":<?php echo $settings_rooms['rooms_currency'] ?>,"HotelSearchCriteria":{"AvailableOnlyIndicator":false,"Criterion":{"RoomStayCandidatesType":{"RoomStayCandidates":[{"GuestCountsType":{"GuestCounts":[{ "Age":18,"AgeQualifyCode":10,"Count":' + guestAdult + '},{ "Age":1,"AgeQualifyCode":7,"Count":' + guestInfant + '}]} }]},"HotelRefs":[{"HotelCode":<?php echo $settings_rooms['rooms_hotel_id'] ?>}],"GetPricesPerGuest":true,"StayDateRange":{"Start":"' + checkInFormated + '","End":"' + checkOutFormated + '"},"RatePlanCandidatesType":{"RatePlanCandidates":[{"GroupCode":null,"PromotionCode":"' + specialCode + '"}]},"TPA_Extensions":{"MultimediaObjects": {"SendData": true},"IsForMobile":true}}}}',
+
+
+
+
+
+                    if (window.innerWidth > 500) {
+
+
+                        if ((guestChild > 0) && (guestInfant > 0)) {
+                            var settings = {
+                                "url": "https://beapi.omnibees.com/api/BE/GetHotelAvail",
+                                "method": "POST",
+                                "headers": {
+                                    "Content-Type": "application/json",
+                                    "Authorization": "Bearer aab46c45b97d059671359e9bf122cc4a"
+                                },
+                                "data": '{"EchoToken":"aab46c45b97d059671359e9bf122cc4a","TimeStamp":"' + timestampiso + '","Target":1,"Version":0,"PrimaryLangID":<?php echo $settings_rooms['rooms_language'] ?>,"AvailRatesOnly":true,"BestOnly":false,"RequestedCurrency":<?php echo $settings_rooms['rooms_currency'] ?>,"HotelSearchCriteria":{"AvailableOnlyIndicator":false,"Criterion":{"RoomStayCandidatesType":{"RoomStayCandidates":[{"GuestCountsType":{"GuestCounts":[{ "Age":18,"AgeQualifyCode":10,"Count":' + guestAdult + '},{ "Age":15,"AgeQualifyCode":8,"Count":' + guestChild + '},{ "Age":1,"AgeQualifyCode":7,"Count":' + guestInfant + '}]} }]},"HotelRefs":[{"HotelCode":<?php echo $settings_rooms['rooms_hotel_id'] ?>}],"GetPricesPerGuest":true,"StayDateRange":{"Start":"' + checkInFormated + '","End":"' + checkOutFormated + '"},"RatePlanCandidatesType":{"RatePlanCandidates":[{"GroupCode":null,"PromotionCode":"' + specialCode + '"}]},"TPA_Extensions":{"MultimediaObjects": {"SendData": true},"IsForMobile":false}}}}',
+                            }
+                        } else if ((guestChild > 0) && (guestInfant == 0)) {
+                            var settings = {
+                                "url": "https://beapi.omnibees.com/api/BE/GetHotelAvail",
+                                "method": "POST",
+                                "headers": {
+                                    "Content-Type": "application/json",
+                                    "Authorization": "Bearer aab46c45b97d059671359e9bf122cc4a"
+                                },
+                                "data": '{"EchoToken":"aab46c45b97d059671359e9bf122cc4a","TimeStamp":"' + timestampiso + '","Target":1,"Version":0,"PrimaryLangID":<?php echo $settings_rooms['rooms_language'] ?>,"AvailRatesOnly":true,"BestOnly":false,"RequestedCurrency":<?php echo $settings_rooms['rooms_currency'] ?>,"HotelSearchCriteria":{"AvailableOnlyIndicator":false,"Criterion":{"RoomStayCandidatesType":{"RoomStayCandidates":[{"GuestCountsType":{"GuestCounts":[{ "Age":18,"AgeQualifyCode":10,"Count":' + guestAdult + '},{ "Age":15,"AgeQualifyCode":8,"Count":' + guestChild + '}]} }]},"HotelRefs":[{"HotelCode":<?php echo $settings_rooms['rooms_hotel_id'] ?>}],"GetPricesPerGuest":true,"StayDateRange":{"Start":"' + checkInFormated + '","End":"' + checkOutFormated + '"},"RatePlanCandidatesType":{"RatePlanCandidates":[{"GroupCode":null,"PromotionCode":"' + specialCode + '"}]},"TPA_Extensions":{"MultimediaObjects": {"SendData": true},"IsForMobile":false}}}}',
+                            }
+                        } else if ((guestChild == 0) && (guestInfant > 0)) {
+                            var settings = {
+                                "url": "https://beapi.omnibees.com/api/BE/GetHotelAvail",
+                                "method": "POST",
+                                "headers": {
+                                    "Content-Type": "application/json",
+                                    "Authorization": "Bearer aab46c45b97d059671359e9bf122cc4a"
+                                },
+                                "data": '{"EchoToken":"aab46c45b97d059671359e9bf122cc4a","TimeStamp":"' + timestampiso + '","Target":1,"Version":0,"PrimaryLangID":<?php echo $settings_rooms['rooms_language'] ?>,"AvailRatesOnly":true,"BestOnly":false,"RequestedCurrency":<?php echo $settings_rooms['rooms_currency'] ?>,"HotelSearchCriteria":{"AvailableOnlyIndicator":false,"Criterion":{"RoomStayCandidatesType":{"RoomStayCandidates":[{"GuestCountsType":{"GuestCounts":[{ "Age":18,"AgeQualifyCode":10,"Count":' + guestAdult + '},{ "Age":1,"AgeQualifyCode":7,"Count":' + guestInfant + '}]} }]},"HotelRefs":[{"HotelCode":<?php echo $settings_rooms['rooms_hotel_id'] ?>}],"GetPricesPerGuest":true,"StayDateRange":{"Start":"' + checkInFormated + '","End":"' + checkOutFormated + '"},"RatePlanCandidatesType":{"RatePlanCandidates":[{"GroupCode":null,"PromotionCode":"' + specialCode + '"}]},"TPA_Extensions":{"MultimediaObjects": {"SendData": true},"IsForMobile":false}}}}',
+                            }
+                        } else {
+                            var settings = {
+                                "url": "https://beapi.omnibees.com/api/BE/GetHotelAvail",
+                                "method": "POST",
+                                "headers": {
+                                    "Content-Type": "application/json",
+                                    "Authorization": "Bearer aab46c45b97d059671359e9bf122cc4a"
+                                },
+                                "data": '{"EchoToken":"aab46c45b97d059671359e9bf122cc4a","TimeStamp":"' + timestampiso + '","Target":1,"Version":0,"PrimaryLangID":<?php echo $settings_rooms['rooms_language'] ?>,"AvailRatesOnly":true,"BestOnly":false,"RequestedCurrency":<?php echo $settings_rooms['rooms_currency'] ?>,"HotelSearchCriteria":{"AvailableOnlyIndicator":false,"Criterion":{"RoomStayCandidatesType":{"RoomStayCandidates":[{"GuestCountsType":{"GuestCounts":[{ "Age":18,"AgeQualifyCode":10,"Count":' + guestAdult + '}]} }]},"HotelRefs":[{"HotelCode":<?php echo $settings_rooms['rooms_hotel_id'] ?>}],"GetPricesPerGuest":true,"StayDateRange":{"Start":"' + checkInFormated + '","End":"' + checkOutFormated + '"},"RatePlanCandidatesType":{"RatePlanCandidates":[{"GroupCode":null,"PromotionCode":"' + specialCode + '"}]},"TPA_Extensions":{"MultimediaObjects": {"SendData": true},"IsForMobile":false}}}}',
+                            }
                         }
                     } else {
-                        var settings = {
-                            "url": "https://beapi.omnibees.com/api/BE/GetHotelAvail",
-                            "method": "POST",
-                            "headers": {
-                                "Content-Type": "application/json",
-                                "Authorization": "Bearer aab46c45b97d059671359e9bf122cc4a"
-                            },
-                            "data": '{"EchoToken":"aab46c45b97d059671359e9bf122cc4a","TimeStamp":"' + timestampiso + '","Target":1,"Version":0,"PrimaryLangID":<?php echo $settings_rooms['rooms_language'] ?>,"AvailRatesOnly":true,"BestOnly":false,"RequestedCurrency":<?php echo $settings_rooms['rooms_currency'] ?>,"HotelSearchCriteria":{"AvailableOnlyIndicator":false,"Criterion":{"RoomStayCandidatesType":{"RoomStayCandidates":[{"GuestCountsType":{"GuestCounts":[{ "Age":18,"AgeQualifyCode":10,"Count":' + guestAdult + '}]} }]},"HotelRefs":[{"HotelCode":<?php echo $settings_rooms['rooms_hotel_id'] ?>}],"GetPricesPerGuest":true,"StayDateRange":{"Start":"' + checkInFormated + '","End":"' + checkOutFormated + '"},"RatePlanCandidatesType":{"RatePlanCandidates":[{"GroupCode":null,"PromotionCode":"' + specialCode + '"}]},"TPA_Extensions":{"MultimediaObjects": {"SendData": true},"IsForMobile":true}}}}',
+                        if ((guestChild > 0) && (guestInfant > 0)) {
+                            var settings = {
+                                "url": "https://beapi.omnibees.com/api/BE/GetHotelAvail",
+                                "method": "POST",
+                                "headers": {
+                                    "Content-Type": "application/json",
+                                    "Authorization": "Bearer aab46c45b97d059671359e9bf122cc4a"
+                                },
+                                "data": '{"EchoToken":"aab46c45b97d059671359e9bf122cc4a","TimeStamp":"' + timestampiso + '","Target":1,"Version":0,"PrimaryLangID":<?php echo $settings_rooms['rooms_language'] ?>,"AvailRatesOnly":true,"BestOnly":false,"RequestedCurrency":<?php echo $settings_rooms['rooms_currency'] ?>,"HotelSearchCriteria":{"AvailableOnlyIndicator":false,"Criterion":{"RoomStayCandidatesType":{"RoomStayCandidates":[{"GuestCountsType":{"GuestCounts":[{ "Age":18,"AgeQualifyCode":10,"Count":' + guestAdult + '},{ "Age":15,"AgeQualifyCode":8,"Count":' + guestChild + '},{ "Age":1,"AgeQualifyCode":7,"Count":' + guestInfant + '}]} }]},"HotelRefs":[{"HotelCode":<?php echo $settings_rooms['rooms_hotel_id'] ?>}],"GetPricesPerGuest":true,"StayDateRange":{"Start":"' + checkInFormated + '","End":"' + checkOutFormated + '"},"RatePlanCandidatesType":{"RatePlanCandidates":[{"GroupCode":null,"PromotionCode":"' + specialCode + '"}]},"TPA_Extensions":{"MultimediaObjects": {"SendData": true},"IsForMobile":true}}}}',
+                            }
+                        } else if ((guestChild > 0) && (guestInfant == 0)) {
+                            var settings = {
+                                "url": "https://beapi.omnibees.com/api/BE/GetHotelAvail",
+                                "method": "POST",
+                                "headers": {
+                                    "Content-Type": "application/json",
+                                    "Authorization": "Bearer aab46c45b97d059671359e9bf122cc4a"
+                                },
+                                "data": '{"EchoToken":"aab46c45b97d059671359e9bf122cc4a","TimeStamp":"' + timestampiso + '","Target":1,"Version":0,"PrimaryLangID":<?php echo $settings_rooms['rooms_language'] ?>,"AvailRatesOnly":true,"BestOnly":false,"RequestedCurrency":<?php echo $settings_rooms['rooms_currency'] ?>,"HotelSearchCriteria":{"AvailableOnlyIndicator":false,"Criterion":{"RoomStayCandidatesType":{"RoomStayCandidates":[{"GuestCountsType":{"GuestCounts":[{ "Age":18,"AgeQualifyCode":10,"Count":' + guestAdult + '},{ "Age":15,"AgeQualifyCode":8,"Count":' + guestChild + '}]} }]},"HotelRefs":[{"HotelCode":<?php echo $settings_rooms['rooms_hotel_id'] ?>}],"GetPricesPerGuest":true,"StayDateRange":{"Start":"' + checkInFormated + '","End":"' + checkOutFormated + '"},"RatePlanCandidatesType":{"RatePlanCandidates":[{"GroupCode":null,"PromotionCode":"' + specialCode + '"}]},"TPA_Extensions":{"MultimediaObjects": {"SendData": true},"IsForMobile":true}}}}',
+                            }
+                        } else if ((guestChild == 0) && (guestInfant > 0)) {
+                            var settings = {
+                                "url": "https://beapi.omnibees.com/api/BE/GetHotelAvail",
+                                "method": "POST",
+                                "headers": {
+                                    "Content-Type": "application/json",
+                                    "Authorization": "Bearer aab46c45b97d059671359e9bf122cc4a"
+                                },
+                                "data": '{"EchoToken":"aab46c45b97d059671359e9bf122cc4a","TimeStamp":"' + timestampiso + '","Target":1,"Version":0,"PrimaryLangID":<?php echo $settings_rooms['rooms_language'] ?>,"AvailRatesOnly":true,"BestOnly":false,"RequestedCurrency":<?php echo $settings_rooms['rooms_currency'] ?>,"HotelSearchCriteria":{"AvailableOnlyIndicator":false,"Criterion":{"RoomStayCandidatesType":{"RoomStayCandidates":[{"GuestCountsType":{"GuestCounts":[{ "Age":18,"AgeQualifyCode":10,"Count":' + guestAdult + '},{ "Age":1,"AgeQualifyCode":7,"Count":' + guestInfant + '}]} }]},"HotelRefs":[{"HotelCode":<?php echo $settings_rooms['rooms_hotel_id'] ?>}],"GetPricesPerGuest":true,"StayDateRange":{"Start":"' + checkInFormated + '","End":"' + checkOutFormated + '"},"RatePlanCandidatesType":{"RatePlanCandidates":[{"GroupCode":null,"PromotionCode":"' + specialCode + '"}]},"TPA_Extensions":{"MultimediaObjects": {"SendData": true},"IsForMobile":true}}}}',
+                            }
+                        } else {
+                            var settings = {
+                                "url": "https://beapi.omnibees.com/api/BE/GetHotelAvail",
+                                "method": "POST",
+                                "headers": {
+                                    "Content-Type": "application/json",
+                                    "Authorization": "Bearer aab46c45b97d059671359e9bf122cc4a"
+                                },
+                                "data": '{"EchoToken":"aab46c45b97d059671359e9bf122cc4a","TimeStamp":"' + timestampiso + '","Target":1,"Version":0,"PrimaryLangID":<?php echo $settings_rooms['rooms_language'] ?>,"AvailRatesOnly":true,"BestOnly":false,"RequestedCurrency":<?php echo $settings_rooms['rooms_currency'] ?>,"HotelSearchCriteria":{"AvailableOnlyIndicator":false,"Criterion":{"RoomStayCandidatesType":{"RoomStayCandidates":[{"GuestCountsType":{"GuestCounts":[{ "Age":18,"AgeQualifyCode":10,"Count":' + guestAdult + '}]} }]},"HotelRefs":[{"HotelCode":<?php echo $settings_rooms['rooms_hotel_id'] ?>}],"GetPricesPerGuest":true,"StayDateRange":{"Start":"' + checkInFormated + '","End":"' + checkOutFormated + '"},"RatePlanCandidatesType":{"RatePlanCandidates":[{"GroupCode":null,"PromotionCode":"' + specialCode + '"}]},"TPA_Extensions":{"MultimediaObjects": {"SendData": true},"IsForMobile":true}}}}',
+                            }
                         }
                     }
+
+
+
+
+
+
                     var settings2 = {
                         "url": "https://beapi.omnibees.com/api/BE/GetHotelDescriptiveInfo",
                         "method": "POST",
